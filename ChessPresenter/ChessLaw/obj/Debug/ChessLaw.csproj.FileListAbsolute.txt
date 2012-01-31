@@ -3,3 +3,8 @@ d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessLaw\bi
 d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessLaw\obj\Debug\ResolveAssemblyReference.cache
 d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessLaw\obj\Debug\ChessLaw.dll
 d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessLaw\obj\Debug\ChessLaw.pdb
+D:\GraduateProject\ChessPresenter\ChessLaw\bin\Debug\ChessLaw.dll
+D:\GraduateProject\ChessPresenter\ChessLaw\bin\Debug\ChessLaw.pdb
+D:\GraduateProject\ChessPresenter\ChessLaw\obj\Debug\ResolveAssemblyReference.cache
+D:\GraduateProject\ChessPresenter\ChessLaw\obj\Debug\ChessLaw.dll
+D:\GraduateProject\ChessPresenter\ChessLaw\obj\Debug\ChessLaw.pdb
