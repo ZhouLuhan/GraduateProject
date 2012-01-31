@@ -1,0 +1,5 @@
+d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessLaw\bin\Debug\ChessLaw.dll
+d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessLaw\bin\Debug\ChessLaw.pdb
+d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessLaw\obj\Debug\ResolveAssemblyReference.cache
+d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessLaw\obj\Debug\ChessLaw.dll
+d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessLaw\obj\Debug\ChessLaw.pdb
