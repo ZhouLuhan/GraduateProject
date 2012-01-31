@@ -28,3 +28,5 @@ D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.g.
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.Properties.Resources.resources
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\GraduateProject\ChessPresenter\ChessPresenter\bin\Debug\ChessLaw.dll
+D:\GraduateProject\ChessPresenter\ChessPresenter\bin\Debug\ChessLaw.pdb

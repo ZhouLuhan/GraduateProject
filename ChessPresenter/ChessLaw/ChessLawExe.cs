@@ -5,6 +5,8 @@ using System.Text;
 
 namespace ChessLaw
 {
+    public delegate List<List<Boolean>> StepJudge(ChessState state, int col, int row);
+
     public static class ChessLawExe
     {
         public static List<List<Boolean>> PawnStep(ChessState state, int col, int row)
