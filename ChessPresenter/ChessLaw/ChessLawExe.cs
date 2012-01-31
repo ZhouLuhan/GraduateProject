@@ -67,7 +67,7 @@ namespace ChessLaw
                     if (state.State[row][col] == ChessType.BKnight)
                     {
                         if (state.State[trow][tcol] == ChessType.None || state.State[trow][tcol] >= ChessType.WPawn && state.State[trow][tcol] <= ChessType.WKing)
-                            ret[tcol][trow] = true;
+                            ret[trow][tcol] = true;
                     }
                 }
             }
@@ -206,16 +206,16 @@ namespace ChessLaw
                 if (tcol >= 0 && tcol <= 7 && trow >= 0 && trow <= 7)
                 {
                     //白王
-                    if (state.State[col][row] == ChessType.WKing)
+                    if (state.State[row][col] == ChessType.WKing)
                     {
-                        if (state.State[tcol][trow] == ChessType.None || state.State[tcol][trow] >= ChessType.BPawn && state.State[tcol][trow] <= ChessType.BKing)
-                            ret[tcol][trow] = true;
+                        if (state.State[trow][tcol] == ChessType.None || state.State[trow][tcol] >= ChessType.BPawn && state.State[trow][tcol] <= ChessType.BKing)
+                            ret[trow][tcol] = true;
                     }
                     //黑王
-                    if (state.State[col][row] == ChessType.BKing)
+                    if (state.State[row][col] == ChessType.BKing)
                     {
-                        if (state.State[tcol][trow] == ChessType.None || state.State[tcol][trow] >= ChessType.WPawn && state.State[tcol][trow] <= ChessType.WKing)
-                            ret[tcol][trow] = true;
+                        if (state.State[trow][tcol] == ChessType.None || state.State[trow][tcol] >= ChessType.WPawn && state.State[trow][tcol] <= ChessType.WKing)
+                            ret[trow][tcol] = true;
                     }
 
                 }
