@@ -230,5 +230,11 @@ namespace ChessLaw
             }
             return ret;
         }
+
+        public static WinnerType GetGameResult(ChessState state)
+        {
+            WinnerType ret = WinnerType.None;
+            return ret;
+        }
     }
 }

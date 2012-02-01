@@ -6,6 +6,8 @@ using System.Text;
 namespace ChessLaw
 {
     public enum ChessType { None, WPawn, WKnight, WBishop, WRook, WQueen, WKing, BPawn, BKnight, BBishop, BRook, BQueen, BKing };
+    public enum WinnerType { None, WhiteWin, BlackWin };
+
     public class ChessState
     {
         public ChessType[][] State { get; set; }

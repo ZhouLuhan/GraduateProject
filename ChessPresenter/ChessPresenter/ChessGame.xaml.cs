@@ -27,6 +27,7 @@ namespace ChessPresenter
         private Border[][] borders;
         private GameState gameState;
         private ChessState chessState;
+        private WinnerType resultState;
         private MainWindow root;
         private AI_Information whiteAI, blackAI;
         private int slcRow, slcCol;
@@ -131,6 +132,13 @@ namespace ChessPresenter
         void ChangeTurn()
         {
             gameState = 1 - gameState;
+            resultState = ChessLawExe.GetGameResult(chessState);
+            if (resultState != WinnerType.None)
+            {
+                if (resultState == WinnerType.WhiteWin) MessageBox.Show("The White Win!");
+                else MessageBox.Show("The Black Win!");
+                this.Close();
+            }
         }
 
         void ChessBoardGrid_Click(object sender, RoutedEventArgs e)
