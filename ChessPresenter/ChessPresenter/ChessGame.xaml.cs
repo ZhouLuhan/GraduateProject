@@ -161,8 +161,8 @@ namespace ChessPresenter
             else
             {
                 for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) borders[i][j].Visibility = System.Windows.Visibility.Hidden;
-                chessState.State[cr][cc] = chessState.State[slcRow][slcCol];
-                chessState.State[slcRow][slcCol] = ChessType.None;
+                chessState.State[cr][cc] = chessState.State[slcRow][slcCol]; chessState.InitState[cr][cc] = false;
+                chessState.State[slcRow][slcCol] = ChessType.None; chessState.InitState[slcRow][slcCol] = false;
                 RenderChessBoard();
                 ChangeTurn();
             }
