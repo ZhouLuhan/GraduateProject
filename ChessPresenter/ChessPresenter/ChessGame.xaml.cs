@@ -29,6 +29,7 @@ namespace ChessPresenter
         private ChessState chessState;
         private MainWindow root;
         private AI_Information whiteAI, blackAI;
+        private int slcRow, slcCol;
         private StepJudge[] stepJudge;
 
         public ChessGame()
@@ -81,7 +82,7 @@ namespace ChessPresenter
 
         void SetupNewGame() 
         {
-            gameState = GameState.WhiteTurn;
+            gameState = GameState.BlackTurn;
             chessState = new ChessState();
             chessState.State[0][0] = chessState.State[0][7] = ChessType.WRook;
             chessState.State[0][1] = chessState.State[0][6] = ChessType.WKnight;
@@ -94,6 +95,7 @@ namespace ChessPresenter
             chessState.State[7][3] = ChessType.BQueen; chessState.State[7][4] = ChessType.BKing;
             for (int i = 0; i < 8; ++i) chessState.State[6][i] = ChessType.BPawn;
             RenderChessBoard();
+            ChangeTurn();
         }
 
         void RenderChessBoard()
@@ -126,18 +128,35 @@ namespace ChessPresenter
                 }
         }
 
+        void ChangeTurn()
+        {
+            gameState = 1 - gameState;
+        }
+
         void ChessBoardGrid_Click(object sender, RoutedEventArgs e)
         {
             BoardButtonPos buttonInfo = (sender as Button).DataContext as BoardButtonPos;
             int cr = buttonInfo.Row, cc = buttonInfo.Col;
-            for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) borders[i][j].Visibility = System.Windows.Visibility.Hidden;
-            borders[cr][cc].Visibility = System.Windows.Visibility.Visible;
-            if (chessState.State[cr][cc] == ChessType.None) return;
-            if (Convert.ToBoolean(Convert.ToInt16((gameState == GameState.WhiteTurn)) ^ Convert.ToInt16(chessState.IsBlackChess(cr, cc))))
+            if (borders[cr][cc].Visibility == System.Windows.Visibility.Hidden || (slcCol == cc && slcRow == cr))
             {
-                Boolean[][] reachable = stepJudge[Convert.ToInt32(chessState.State[cr][cc])](chessState, cc, cr);
-                for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j)
-                        if (reachable[i][j]) borders[i][j].Visibility = System.Windows.Visibility.Visible;
+                slcCol = cc; slcRow = cr;
+                for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) borders[i][j].Visibility = System.Windows.Visibility.Hidden;
+                borders[cr][cc].Visibility = System.Windows.Visibility.Visible;
+                if (chessState.State[cr][cc] == ChessType.None) return;
+                if (Convert.ToBoolean(Convert.ToInt16((gameState == GameState.WhiteTurn)) ^ Convert.ToInt16(chessState.IsBlackChess(cr, cc))))
+                {
+                    Boolean[][] reachable = stepJudge[Convert.ToInt32(chessState.State[cr][cc])](chessState, cc, cr);
+                    for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j)
+                            if (reachable[i][j]) borders[i][j].Visibility = System.Windows.Visibility.Visible;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) borders[i][j].Visibility = System.Windows.Visibility.Hidden;
+                chessState.State[cr][cc] = chessState.State[slcRow][slcCol];
+                chessState.State[slcRow][slcCol] = ChessType.None;
+                RenderChessBoard();
+                ChangeTurn();
             }
         }
 
