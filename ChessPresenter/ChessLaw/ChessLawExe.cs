@@ -86,10 +86,11 @@ namespace ChessLaw
             int[] dc = { 1, -1, -1, 1 };
             int[] dr = { -1, -1, 1, 1 };
 
-            int tcol = col, trow = row;
+            int tcol, trow;
   
             for (int i = 0; i < 4; i++)
             {
+                tcol = col; trow = row;
                 for (int j = 1; j < 8; j++)
                 {
                     tcol += dc[i]; trow += dr[i];
@@ -124,10 +125,11 @@ namespace ChessLaw
             int[] dc = { 1, 0, -1, 0 };
             int[] dr = { 0, -1, 0, 1 };
 
-            int tcol = col, trow = row;
+            int tcol, trow;
 
             for (int i = 0; i < 4; i++)
             {
+                tcol = col; trow = row;
                 for (int j = 1; j < 8; j++)
                 {
                     tcol += dc[i]; trow += dr[i];
@@ -162,10 +164,11 @@ namespace ChessLaw
             int[] dc = { 1, -1, -1, 1, 1, 0, -1, 0 };
             int[] dr = { -1, -1, 1, 1, 0, -1, 0, 1 };
 
-            int tcol = col, trow = row;
+            int tcol, trow;
 
             for (int i = 0; i < 8; i++)
             {
+                tcol = col; trow = row;
                 for (int j = 1; j < 8; j++)
                 {
                     tcol += dc[i]; trow += dr[i];
@@ -200,11 +203,11 @@ namespace ChessLaw
             int[] dc = { 1, -1, -1, 1, 1, 0, -1, 0 };
             int[] dr = { -1, -1, 1, 1, 0, -1, 0, 1 };
 
-            int tcol = col, trow = row;
+            int tcol, trow;
 
             for (int i = 0; i < 8; i++)
             {
-                tcol += dc[i]; trow += dr[i];
+                tcol = col + dc[i]; trow = row + dr[i];
                 if (tcol >= 0 && tcol <= 7 && trow >= 0 && trow <= 7)
                 {
                     //白王
