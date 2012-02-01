@@ -5,14 +5,14 @@ using System.Text;
 
 namespace ChessLaw
 {
-    public delegate List<List<Boolean>> StepJudge(ChessState state, int col, int row);
+    public delegate Boolean[][] StepJudge(ChessState state, int col, int row);
 
     public static class ChessLawExe
     {
-        public static List<List<Boolean>> PawnStep(ChessState state, int col, int row)
+        public static Boolean[][] PawnStep(ChessState state, int col, int row)
         {
-            List<List<Boolean>> ret = new List<List<bool>>(8);
-            for (int i = 0; i < 8; ++i) ret[i] = new List<bool>(8);
+            Boolean[][] ret = new Boolean[8][];
+            for (int i = 0; i < 8; ++i) ret[i] = new Boolean[8];
             for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) ret[i][j] = false;
 
             //白棋小兵的第一步
@@ -44,10 +44,10 @@ namespace ChessLaw
             return ret;
         }
 
-        public static List<List<Boolean>> KnightStep(ChessState state, int col, int row)
+        public static Boolean[][] KnightStep(ChessState state, int col, int row)
         {
-            List<List<Boolean>> ret = new List<List<bool>>(8);
-            for (int i = 0; i < 8; ++i) ret[i] = new List<bool>(8);
+            Boolean[][] ret = new Boolean[8][];
+            for (int i = 0; i < 8; ++i) ret[i] = new Boolean[8];
             for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) ret[i][j] = false;
 
             int[] dc = { 1, -1, -2, -2, -1, 1, 2, 2 };
@@ -77,10 +77,10 @@ namespace ChessLaw
             return ret;
         }
 
-        public static List<List<Boolean>> BishopStep(ChessState state, int col, int row)
+        public static Boolean[][] BishopStep(ChessState state, int col, int row)
         {
-            List<List<Boolean>> ret = new List<List<bool>>(8);
-            for (int i = 0; i < 8; ++i) ret[i] = new List<bool>(8);
+            Boolean[][] ret = new Boolean[8][];
+            for (int i = 0; i < 8; ++i) ret[i] = new Boolean[8];
             for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) ret[i][j] = false;
 
             int[] dc = { 1, -1, -1, 1 };
@@ -97,29 +97,30 @@ namespace ChessLaw
                     if (tcol >= 0 && tcol <= 7 && trow >= 0 && trow <= 7)
                     {
                         //白主教
-                        if (state.State[row][col] == ChessType.WKnight)
+                        if (state.State[row][col] == ChessType.WBishop)
                         {
                             if (state.State[trow][tcol] == ChessType.None || state.State[trow][tcol] >= ChessType.BPawn && state.State[trow][tcol] <= ChessType.BKing)
                                 ret[trow][tcol] = true;
                             if (state.State[trow][tcol] != ChessType.None) break;
                         }
                         //黑主教
-                        if (state.State[row][col] == ChessType.BKnight)
+                        if (state.State[row][col] == ChessType.BBishop)
                         {
                             if (state.State[trow][tcol] == ChessType.None || state.State[trow][tcol] >= ChessType.WPawn && state.State[trow][tcol] <= ChessType.WKing)
                                 ret[trow][tcol] = true;
                             if (state.State[trow][tcol] != ChessType.None) break;
                         }
                     }
+                    else break;
                 }
             }
             return ret;
         }
 
-        public static List<List<Boolean>> RookStep(ChessState state, int col, int row)
+        public static Boolean[][] RookStep(ChessState state, int col, int row)
         {
-            List<List<Boolean>> ret = new List<List<bool>>(8);
-            for (int i = 0; i < 8; ++i) ret[i] = new List<bool>(8);
+            Boolean[][] ret = new Boolean[8][];
+            for (int i = 0; i < 8; ++i) ret[i] = new Boolean[8];
             for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) ret[i][j] = false;
 
             int[] dc = { 1, 0, -1, 0 };
@@ -150,15 +151,16 @@ namespace ChessLaw
                             if (state.State[trow][tcol] != ChessType.None) break;
                         }
                     }
+                    else break;
                 }
             }
             return ret;
         }
 
-        public static List<List<Boolean>> QueenStep(ChessState state, int col, int row)
+        public static Boolean[][] QueenStep(ChessState state, int col, int row)
         {
-            List<List<Boolean>> ret = new List<List<bool>>(8);
-            for (int i = 0; i < 8; ++i) ret[i] = new List<bool>(8);
+            Boolean[][] ret = new Boolean[8][];
+            for (int i = 0; i < 8; ++i) ret[i] = new Boolean[8];
             for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) ret[i][j] = false;
 
             int[] dc = { 1, -1, -1, 1, 1, 0, -1, 0 };
@@ -189,15 +191,16 @@ namespace ChessLaw
                             if (state.State[trow][tcol] != ChessType.None) break;
                         }
                     }
+                    else break;
                 }
             }
             return ret;
         }
 
-        public static List<List<Boolean>> KingStep(ChessState state, int col, int row)
+        public static Boolean[][] KingStep(ChessState state, int col, int row)
         {
-            List<List<Boolean>> ret = new List<List<bool>>(8);
-            for (int i = 0; i < 8; ++i) ret[i] = new List<bool>(8);
+            Boolean[][] ret = new Boolean[8][];
+            for (int i = 0; i < 8; ++i) ret[i] = new Boolean[8];
             for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) ret[i][j] = false;
 
             int[] dc = { 1, -1, -1, 1, 1, 0, -1, 0 };
