@@ -1,32 +1,19 @@
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\bin\Debug\ChessPresenter.exe
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\bin\Debug\ChessPresenter.pdb
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\obj\x86\Debug\ResolveAssemblyReference.cache
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessGame.baml
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\obj\x86\Debug\MainWindow.baml
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessGame.g.cs
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\obj\x86\Debug\MainWindow.g.cs
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\obj\x86\Debug\App.g.cs
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter_MarkupCompile.cache
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.g.resources
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.Properties.Resources.resources
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\obj\x86\Debug\GenerateResource.read.1.tlog
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\obj\x86\Debug\GenerateResource.write.1.tlog
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.exe
-d:\users\krwlng\documents\visual studio 2010\Projects\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.pdb
-D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.exe
-D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.pdb
 D:\GraduateProject\ChessPresenter\ChessPresenter\bin\Debug\ChessPresenter.exe
 D:\GraduateProject\ChessPresenter\ChessPresenter\bin\Debug\ChessPresenter.pdb
+D:\GraduateProject\ChessPresenter\ChessPresenter\bin\Debug\ChessLaw.dll
+D:\GraduateProject\ChessPresenter\ChessPresenter\bin\Debug\ChessLaw.pdb
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessGame.baml
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\MainWindow.baml
+D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\PawnPromotion.baml
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessGame.g.cs
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\MainWindow.g.cs
+D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\PawnPromotion.g.cs
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\App.g.cs
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter_MarkupCompile.cache
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.g.resources
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.Properties.Resources.resources
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\GenerateResource.write.1.tlog
-D:\GraduateProject\ChessPresenter\ChessPresenter\bin\Debug\ChessLaw.dll
-D:\GraduateProject\ChessPresenter\ChessPresenter\bin\Debug\ChessLaw.pdb
+D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.exe
+D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.pdb

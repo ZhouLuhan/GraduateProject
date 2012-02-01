@@ -47,7 +47,5 @@ namespace ChessPresenter
             ChessGame chessGameWindow = new ChessGame(this, ai_a, ai_b);
             chessGameWindow.Show(); this.Hide();
         }
-
-
     }
 }

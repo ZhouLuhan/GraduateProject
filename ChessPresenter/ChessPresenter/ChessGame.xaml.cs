@@ -18,6 +18,7 @@ namespace ChessPresenter
     /// Interaction logic for ChessGame.xaml
     /// </summary>
     /// 
+    public class SelectedType { public ChessType type; }
     public class BoardButtonPos { public int Row, Col; }
     public enum GameState { WhiteTurn, BlackTurn, GameOver }
 
@@ -161,8 +162,34 @@ namespace ChessPresenter
             else
             {
                 for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) borders[i][j].Visibility = System.Windows.Visibility.Hidden;
+                if ((chessState.State[slcRow][slcCol] == ChessType.BKing || chessState.State[slcRow][slcCol] == ChessType.WKing) &&
+                    System.Math.Abs(slcCol - cc) == 2)
+                {
+                    if (slcCol > cc)
+                    {
+                        chessState.State[cr][cc + 1] = chessState.State[cr][0]; chessState.InitState[cr][cc + 1] = false;
+                        chessState.State[cr][0] = ChessType.None; chessState.InitState[cr][0] = false;
+                    }
+                    else
+                    {
+                        chessState.State[cr][cc - 1] = chessState.State[cr][7]; chessState.InitState[cr][cc - 1] = false;
+                        chessState.State[cr][7] = ChessType.None; chessState.InitState[cr][7] = false;
+                    }
+                }
                 chessState.State[cr][cc] = chessState.State[slcRow][slcCol]; chessState.InitState[cr][cc] = false;
                 chessState.State[slcRow][slcCol] = ChessType.None; chessState.InitState[slcRow][slcCol] = false;
+                if (chessState.State[cr][cc] == ChessType.WPawn && cr == 7)
+                {
+                    SelectedType slcType = new SelectedType();
+                    PawnPromotion pawnPromotion = new PawnPromotion(slcType, true);
+                    pawnPromotion.ShowDialog(); chessState.State[cr][cc] = slcType.type;
+                }
+                else if (chessState.State[cr][cc] == ChessType.BPawn && cr == 0)
+                {
+                    SelectedType slcType = new SelectedType();
+                    PawnPromotion pawnPromotion = new PawnPromotion(slcType, false);
+                    pawnPromotion.ShowDialog(); chessState.State[cr][cc] = slcType.type;
+                }
                 RenderChessBoard();
                 ChangeTurn();
             }
