@@ -218,6 +218,7 @@ namespace ChessLaw
                     {
                         if (state.State[trow][tcol] == ChessType.None || state.State[trow][tcol] >= ChessType.BPawn && state.State[trow][tcol] <= ChessType.BKing)
                             ret[trow][tcol] = true;
+                        
                     }
                     //黑王
                     if (state.State[row][col] == ChessType.BKing)
@@ -225,7 +226,99 @@ namespace ChessLaw
                         if (state.State[trow][tcol] == ChessType.None || state.State[trow][tcol] >= ChessType.WPawn && state.State[trow][tcol] <= ChessType.WKing)
                             ret[trow][tcol] = true;
                     }
+                }
+            }
 
+            if (KingRookSwap(state, row, col, row, 0)) ret[row][col - 2] = true;
+            else if (KingRookSwap(state, row, col, row, 7)) ret[row][col + 2] = true;
+
+            return ret;
+        }
+
+        public static Boolean[][] KingStep1(ChessState state, int col, int row)
+        {
+            Boolean[][] ret = new Boolean[8][];
+            for (int i = 0; i < 8; ++i) ret[i] = new Boolean[8];
+            for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) ret[i][j] = false;
+
+            int[] dc = { 1, -1, -1, 1, 1, 0, -1, 0 };
+            int[] dr = { -1, -1, 1, 1, 0, -1, 0, 1 };
+
+            int tcol, trow;
+
+            for (int i = 0; i < 8; i++)
+            {
+                tcol = col + dc[i]; trow = row + dr[i];
+                if (tcol >= 0 && tcol <= 7 && trow >= 0 && trow <= 7)
+                {
+                    //白王
+                    if (state.State[row][col] == ChessType.WKing)
+                    {
+                        if (state.State[trow][tcol] == ChessType.None || state.State[trow][tcol] >= ChessType.BPawn && state.State[trow][tcol] <= ChessType.BKing)
+                            ret[trow][tcol] = true;
+
+                    }
+                    //黑王
+                    if (state.State[row][col] == ChessType.BKing)
+                    {
+                        if (state.State[trow][tcol] == ChessType.None || state.State[trow][tcol] >= ChessType.WPawn && state.State[trow][tcol] <= ChessType.WKing)
+                            ret[trow][tcol] = true;
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+        public static bool CheckMate(ChessState state, int kr, int kc)
+        {
+            bool ret = false;
+            ChessType Pawn, King;
+            if (state.State[kr][kc] == ChessType.BKing) { Pawn = ChessType.WPawn; King = ChessType.WKing; }
+            else { Pawn = ChessType.BPawn; King = ChessType.BKing; }
+
+            Boolean[][] Step;
+
+            for (int i = 6; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (state.State[i][j] >= Pawn && state.State[i][j] <= King)
+                    {
+                        switch (state.State[i][j])
+                        {
+                            case ChessType.WPawn:
+                            case ChessType.BPawn:
+                                Step = PawnStep(state, i, j);
+                                if (Step[kr][kc]) return ret = true;
+                                break;
+                            case ChessType.WKnight:
+                            case ChessType.BKnight:
+                                Step = KnightStep(state, i, j);
+                                if (Step[kr][kc]) return ret = true;
+                                break;
+                            case ChessType.WBishop:
+                            case ChessType.BBishop:
+                                Step = BishopStep(state, i, j);
+                                if (Step[kr][kc]) return ret = true;
+                                break;
+                            case ChessType.WRook:
+                            case ChessType.BRook:
+                                Step = RookStep(state, i, j);
+                                if (Step[kr][kc]) return ret = true;
+                                break;
+                            case ChessType.WQueen:
+                            case ChessType.BQueen:
+                                Step = QueenStep(state, i, j);
+                                if (Step[kr][kc]) return ret = true;
+                                break;
+                            case ChessType.WKing:
+                            case ChessType.BKing:
+                                Step = KingStep1(state, i, j);
+                                if (Step[kr][kc]) return ret = true;
+                                break;
+                        }
+                    }
                 }
             }
             return ret;
@@ -233,7 +326,25 @@ namespace ChessLaw
 
         public static Boolean KingRookSwap(ChessState state, int kr, int kc, int rr, int rc)
         {
-            Boolean ret = false;
+            Boolean ret = true;
+
+            //条件1 是否动过
+            bool move = true;
+            if (state.InitState[kr][kc] && state.InitState[rr][rc]) move = false;
+            if (move) return ret = false;
+            
+            //条件2 之间位置是否是空
+            int cs, ct;
+            bool empty = true;
+            if (kc > rc) { cs = rc; ct = kc; }
+            else { cs = kc; ct = rc; }
+            for (int i = cs + 1; i < ct; i++)
+                if (state.State[kr][i] != ChessType.None) empty = false;
+            if (!empty) return ret = false;
+
+            //条件3是否被将军
+            if (CheckMate(state, kr, kc)) return ret = false;
+
             return ret;
         }
 
