@@ -59,7 +59,7 @@ namespace ChessPresenter
                     Chessboard.Children.Add(buttons[i][j]);
                     borders[i][j] = new Border();
                     borders[i][j].BorderBrush = new SolidColorBrush(Colors.Black);
-                    borders[i][j].BorderThickness = new Thickness(1.0);
+                    borders[i][j].BorderThickness = new Thickness(2.0);
                     borders[i][j].Visibility = System.Windows.Visibility.Hidden;
                     Grid.SetColumn(borders[i][j], j); Grid.SetRow(borders[i][j], 7 - i);
                     Chessboard.Children.Add(borders[i][j]);
@@ -93,6 +93,37 @@ namespace ChessPresenter
             chessState.State[7][2] = chessState.State[7][5] = ChessType.BBishop;
             chessState.State[7][3] = ChessType.BQueen; chessState.State[7][4] = ChessType.BKing;
             for (int i = 0; i < 8; ++i) chessState.State[6][i] = ChessType.BPawn;
+            RenderChessBoard();
+        }
+
+        void RenderChessBoard()
+        {
+            for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j)
+                {
+                    switch (chessState.State[i][j])
+                    {
+                        case ChessType.BBishop:
+                        case ChessType.WBishop:
+                            buttons[i][j].Content = "Bishop"; break;
+                        case ChessType.BPawn:
+                        case ChessType.WPawn:
+                            buttons[i][j].Content = "Pawn"; break;
+                        case ChessType.BRook:
+                        case ChessType.WRook:
+                            buttons[i][j].Content = "Rook"; break;
+                        case ChessType.BKnight:
+                        case ChessType.WKnight:
+                            buttons[i][j].Content = "Knight"; break;
+                        case ChessType.BQueen:
+                        case ChessType.WQueen:
+                            buttons[i][j].Content = "Queen"; break;
+                        case ChessType.BKing:
+                        case ChessType.WKing:
+                            buttons[i][j].Content = "King"; break;
+                        default: buttons[i][j].Content = ""; break;
+                    } if (chessState.IsWhiteChess(i, j)) buttons[i][j].Foreground = new SolidColorBrush(Colors.Aqua);
+                    else buttons[i][j].Foreground = new SolidColorBrush(Colors.Black);
+                }
         }
 
         void ChessBoardGrid_Click(object sender, RoutedEventArgs e)
@@ -104,7 +135,7 @@ namespace ChessPresenter
             if (chessState.State[cr][cc] == ChessType.None) return;
             if (Convert.ToBoolean(Convert.ToInt16((gameState == GameState.WhiteTurn)) ^ Convert.ToInt16(chessState.IsBlackChess(cr, cc))))
             {
-                List<List<Boolean>> reachable = stepJudge[Convert.ToInt32(chessState.State[cr][cc])](chessState, cc, cr);
+                Boolean[][] reachable = stepJudge[Convert.ToInt32(chessState.State[cr][cc])](chessState, cc, cr);
                 for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j)
                         if (reachable[i][j]) borders[i][j].Visibility = System.Windows.Visibility.Visible;
             }
