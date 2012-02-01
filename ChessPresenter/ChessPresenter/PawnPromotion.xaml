@@ -1,0 +1,13 @@
+﻿<Window x:Class="ChessPresenter.PawnPromotion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PawnPromotion" Height="250" Width="150">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Button x:Name="SlcRook" Content="Rook" Margin="10" Height="30" Click="SlcRook_Click"></Button>
+            <Button x:Name="SlcKnight" Content="Knight" Margin="10" Height="30" Click="SlcKnight_Click"></Button>
+            <Button x:Name="SlcBishop" Content="Bishop" Margin="10" Height="30" Click="SlcBishop_Click"></Button>
+            <Button x:Name="SlcQueen" Content="Queen" Margin="10" Height="30" Click="SlcQueen_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

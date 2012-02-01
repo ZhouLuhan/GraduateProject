@@ -30,3 +30,5 @@ D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\GenerateResource.
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\GenerateResource.write.1.tlog
 D:\GraduateProject\ChessPresenter\ChessPresenter\bin\Debug\ChessLaw.dll
 D:\GraduateProject\ChessPresenter\ChessPresenter\bin\Debug\ChessLaw.pdb
+D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\PawnPromotion.baml
+D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\PawnPromotion.g.cs

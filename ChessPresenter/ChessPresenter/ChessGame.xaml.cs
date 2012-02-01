@@ -18,6 +18,7 @@ namespace ChessPresenter
     /// Interaction logic for ChessGame.xaml
     /// </summary>
     /// 
+    public class SelectedType { public ChessType type; }
     public class BoardButtonPos { public int Row, Col; }
     public enum GameState { WhiteTurn, BlackTurn, GameOver }
 
@@ -163,6 +164,18 @@ namespace ChessPresenter
                 for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) borders[i][j].Visibility = System.Windows.Visibility.Hidden;
                 chessState.State[cr][cc] = chessState.State[slcRow][slcCol]; chessState.InitState[cr][cc] = false;
                 chessState.State[slcRow][slcCol] = ChessType.None; chessState.InitState[slcRow][slcCol] = false;
+                if (chessState.State[cr][cc] == ChessType.WPawn && cr == 7)
+                {
+                    SelectedType slcType = new SelectedType();
+                    PawnPromotion pawnPromotion = new PawnPromotion(slcType, true);
+                    pawnPromotion.ShowDialog(); chessState.State[cr][cc] = slcType.type;
+                }
+                else if (chessState.State[cr][cc] == ChessType.BPawn && cr == 0)
+                {
+                    SelectedType slcType = new SelectedType();
+                    PawnPromotion pawnPromotion = new PawnPromotion(slcType, false);
+                    pawnPromotion.ShowDialog(); chessState.State[cr][cc] = slcType.type;
+                }
                 RenderChessBoard();
                 ChangeTurn();
             }

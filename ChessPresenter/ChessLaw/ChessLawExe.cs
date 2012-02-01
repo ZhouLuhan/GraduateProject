@@ -231,7 +231,7 @@ namespace ChessLaw
             return ret;
         }
 
-        public Boolean KingRookSwap(ChessState state, int kr, int kc, int rr, int rc)
+        public static Boolean KingRookSwap(ChessState state, int kr, int kc, int rr, int rc)
         {
             Boolean ret = false;
             return ret;
