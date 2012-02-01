@@ -234,6 +234,20 @@ namespace ChessLaw
         public static WinnerType GetGameResult(ChessState state)
         {
             WinnerType ret = WinnerType.None;
+            bool ew = false,eb = false;
+
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (state.State[i][j] == ChessType.WKing) ew = true;
+                    if (state.State[i][j] == ChessType.BKing) eb = true;
+                }
+            }
+            if (ew && eb) ret = WinnerType.None;
+            if (ew && !eb) ret = WinnerType.WhiteWin;
+            if (!ew && eb) ret = WinnerType.BlackWin;
+
             return ret;
         }
     }
