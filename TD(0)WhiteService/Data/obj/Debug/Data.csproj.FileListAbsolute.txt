@@ -1,0 +1,6 @@
+D:\GraduateProject\TD(0)WhiteService\Data\bin\Debug\Data.dll.config
+D:\GraduateProject\TD(0)WhiteService\Data\bin\Debug\Data.dll
+D:\GraduateProject\TD(0)WhiteService\Data\bin\Debug\Data.pdb
+D:\GraduateProject\TD(0)WhiteService\Data\obj\Debug\ResolveAssemblyReference.cache
+D:\GraduateProject\TD(0)WhiteService\Data\obj\Debug\Data.dll
+D:\GraduateProject\TD(0)WhiteService\Data\obj\Debug\Data.pdb
