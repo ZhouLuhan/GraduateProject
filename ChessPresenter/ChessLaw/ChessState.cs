@@ -34,5 +34,16 @@ namespace ChessLaw
             if (State[row][col] >= ChessType.BPawn && State[row][col] <= ChessType.BKing) return true;
             return false;
         }
+
+        public static string StateToStr(ChessState state)
+        {
+            return "abcde";
+        }
+
+        public static ChessState StrToState(string state)
+        {
+            ChessState cState = new ChessState();
+            return cState;
+        }
     }
 }

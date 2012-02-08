@@ -33,22 +33,22 @@ namespace Data
     partial void InsertASTRATEGY(ASTRATEGY instance);
     partial void UpdateASTRATEGY(ASTRATEGY instance);
     partial void DeleteASTRATEGY(ASTRATEGY instance);
-    partial void InsertPROB(PROB instance);
-    partial void UpdatePROB(PROB instance);
-    partial void DeletePROB(PROB instance);
-    partial void InsertVREWARD(VREWARD instance);
-    partial void UpdateVREWARD(VREWARD instance);
-    partial void DeleteVREWARD(VREWARD instance);
     partial void InsertVSTATE(VSTATE instance);
     partial void UpdateVSTATE(VSTATE instance);
     partial void DeleteVSTATE(VSTATE instance);
+    partial void InsertPROB(PROB instance);
+    partial void UpdatePROB(PROB instance);
+    partial void DeletePROB(PROB instance);
     partial void InsertSTATE(STATE instance);
     partial void UpdateSTATE(STATE instance);
     partial void DeleteSTATE(STATE instance);
+    partial void InsertVREWARD(VREWARD instance);
+    partial void UpdateVREWARD(VREWARD instance);
+    partial void DeleteVREWARD(VREWARD instance);
     #endregion
 		
 		public WhiteTD0DataContext() : 
-				base(global::Data.Properties.Settings.Default.AI_TD_0__White_1ConnectionString, mappingSource)
+				base(global::Data.Properties.Settings.Default.AI_TD_0__White_1ConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -85,22 +85,6 @@ namespace Data
 			}
 		}
 		
-		public System.Data.Linq.Table<PROB> PROBs
-		{
-			get
-			{
-				return this.GetTable<PROB>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VREWARD> VREWARDs
-		{
-			get
-			{
-				return this.GetTable<VREWARD>();
-			}
-		}
-		
 		public System.Data.Linq.Table<VSTATE> VSTATEs
 		{
 			get
@@ -109,11 +93,27 @@ namespace Data
 			}
 		}
 		
+		public System.Data.Linq.Table<PROB> PROBs
+		{
+			get
+			{
+				return this.GetTable<PROB>();
+			}
+		}
+		
 		public System.Data.Linq.Table<STATE> STATEs
 		{
 			get
 			{
 				return this.GetTable<STATE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VREWARD> VREWARDs
+		{
+			get
+			{
+				return this.GetTable<VREWARD>();
 			}
 		}
 	}
@@ -257,6 +257,133 @@ namespace Data
 		{
 			this.SendPropertyChanging();
 			entity.ASTRATEGY = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VSTATE")]
+	public partial class VSTATE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _SNO;
+		
+		private double _VALUE;
+		
+		private EntityRef<STATE> _STATE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSNOChanging(int value);
+    partial void OnSNOChanged();
+    partial void OnVALUEChanging(double value);
+    partial void OnVALUEChanged();
+    #endregion
+		
+		public VSTATE()
+		{
+			this._STATE = default(EntityRef<STATE>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SNO", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int SNO
+		{
+			get
+			{
+				return this._SNO;
+			}
+			set
+			{
+				if ((this._SNO != value))
+				{
+					if (this._STATE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSNOChanging(value);
+					this.SendPropertyChanging();
+					this._SNO = value;
+					this.SendPropertyChanged("SNO");
+					this.OnSNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALUE", DbType="Float NOT NULL")]
+		public double VALUE
+		{
+			get
+			{
+				return this._VALUE;
+			}
+			set
+			{
+				if ((this._VALUE != value))
+				{
+					this.OnVALUEChanging(value);
+					this.SendPropertyChanging();
+					this._VALUE = value;
+					this.SendPropertyChanged("VALUE");
+					this.OnVALUEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_VSTATE", Storage="_STATE", ThisKey="SNO", OtherKey="SNO", IsForeignKey=true)]
+		public STATE STATE
+		{
+			get
+			{
+				return this._STATE.Entity;
+			}
+			set
+			{
+				STATE previousValue = this._STATE.Entity;
+				if (((previousValue != value) 
+							|| (this._STATE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._STATE.Entity = null;
+						previousValue.VSTATE = null;
+					}
+					this._STATE.Entity = value;
+					if ((value != null))
+					{
+						value.VSTATE = this;
+						this._SNO = value.SNO;
+					}
+					else
+					{
+						this._SNO = default(int);
+					}
+					this.SendPropertyChanged("STATE");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -517,6 +644,208 @@ namespace Data
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.STATE")]
+	public partial class STATE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _SNO;
+		
+		private string _MSTATE;
+		
+		private EntityRef<VSTATE> _VSTATE;
+		
+		private EntitySet<PROB> _PROBs;
+		
+		private EntitySet<PROB> _PROBs1;
+		
+		private EntitySet<VREWARD> _VREWARDs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSNOChanging(int value);
+    partial void OnSNOChanged();
+    partial void OnMSTATEChanging(string value);
+    partial void OnMSTATEChanged();
+    #endregion
+		
+		public STATE()
+		{
+			this._VSTATE = default(EntityRef<VSTATE>);
+			this._PROBs = new EntitySet<PROB>(new Action<PROB>(this.attach_PROBs), new Action<PROB>(this.detach_PROBs));
+			this._PROBs1 = new EntitySet<PROB>(new Action<PROB>(this.attach_PROBs1), new Action<PROB>(this.detach_PROBs1));
+			this._VREWARDs = new EntitySet<VREWARD>(new Action<VREWARD>(this.attach_VREWARDs), new Action<VREWARD>(this.detach_VREWARDs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SNO", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int SNO
+		{
+			get
+			{
+				return this._SNO;
+			}
+			set
+			{
+				if ((this._SNO != value))
+				{
+					this.OnSNOChanging(value);
+					this.SendPropertyChanging();
+					this._SNO = value;
+					this.SendPropertyChanged("SNO");
+					this.OnSNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSTATE", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string MSTATE
+		{
+			get
+			{
+				return this._MSTATE;
+			}
+			set
+			{
+				if ((this._MSTATE != value))
+				{
+					this.OnMSTATEChanging(value);
+					this.SendPropertyChanging();
+					this._MSTATE = value;
+					this.SendPropertyChanged("MSTATE");
+					this.OnMSTATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_VSTATE", Storage="_VSTATE", ThisKey="SNO", OtherKey="SNO", IsUnique=true, IsForeignKey=false)]
+		public VSTATE VSTATE
+		{
+			get
+			{
+				return this._VSTATE.Entity;
+			}
+			set
+			{
+				VSTATE previousValue = this._VSTATE.Entity;
+				if (((previousValue != value) 
+							|| (this._VSTATE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._VSTATE.Entity = null;
+						previousValue.STATE = null;
+					}
+					this._VSTATE.Entity = value;
+					if ((value != null))
+					{
+						value.STATE = this;
+					}
+					this.SendPropertyChanged("VSTATE");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_PROB", Storage="_PROBs", ThisKey="SNO", OtherKey="NSNO")]
+		public EntitySet<PROB> PROBs
+		{
+			get
+			{
+				return this._PROBs;
+			}
+			set
+			{
+				this._PROBs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_PROB1", Storage="_PROBs1", ThisKey="SNO", OtherKey="SNO")]
+		public EntitySet<PROB> PROBs1
+		{
+			get
+			{
+				return this._PROBs1;
+			}
+			set
+			{
+				this._PROBs1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_VREWARD", Storage="_VREWARDs", ThisKey="SNO", OtherKey="SNO")]
+		public EntitySet<VREWARD> VREWARDs
+		{
+			get
+			{
+				return this._VREWARDs;
+			}
+			set
+			{
+				this._VREWARDs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_PROBs(PROB entity)
+		{
+			this.SendPropertyChanging();
+			entity.STATE = this;
+		}
+		
+		private void detach_PROBs(PROB entity)
+		{
+			this.SendPropertyChanging();
+			entity.STATE = null;
+		}
+		
+		private void attach_PROBs1(PROB entity)
+		{
+			this.SendPropertyChanging();
+			entity.STATE1 = this;
+		}
+		
+		private void detach_PROBs1(PROB entity)
+		{
+			this.SendPropertyChanging();
+			entity.STATE1 = null;
+		}
+		
+		private void attach_VREWARDs(VREWARD entity)
+		{
+			this.SendPropertyChanging();
+			entity.STATE = this;
+		}
+		
+		private void detach_VREWARDs(VREWARD entity)
+		{
+			this.SendPropertyChanging();
+			entity.STATE = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VREWARD")]
 	public partial class VREWARD : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -730,335 +1059,6 @@ namespace Data
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VSTATE")]
-	public partial class VSTATE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _SNO;
-		
-		private double _VALUE;
-		
-		private EntityRef<STATE> _STATE;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSNOChanging(int value);
-    partial void OnSNOChanged();
-    partial void OnVALUEChanging(double value);
-    partial void OnVALUEChanged();
-    #endregion
-		
-		public VSTATE()
-		{
-			this._STATE = default(EntityRef<STATE>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SNO", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int SNO
-		{
-			get
-			{
-				return this._SNO;
-			}
-			set
-			{
-				if ((this._SNO != value))
-				{
-					if (this._STATE.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSNOChanging(value);
-					this.SendPropertyChanging();
-					this._SNO = value;
-					this.SendPropertyChanged("SNO");
-					this.OnSNOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALUE", DbType="Float NOT NULL")]
-		public double VALUE
-		{
-			get
-			{
-				return this._VALUE;
-			}
-			set
-			{
-				if ((this._VALUE != value))
-				{
-					this.OnVALUEChanging(value);
-					this.SendPropertyChanging();
-					this._VALUE = value;
-					this.SendPropertyChanged("VALUE");
-					this.OnVALUEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_VSTATE", Storage="_STATE", ThisKey="SNO", OtherKey="SNO", IsForeignKey=true)]
-		public STATE STATE
-		{
-			get
-			{
-				return this._STATE.Entity;
-			}
-			set
-			{
-				STATE previousValue = this._STATE.Entity;
-				if (((previousValue != value) 
-							|| (this._STATE.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._STATE.Entity = null;
-						previousValue.VSTATE = null;
-					}
-					this._STATE.Entity = value;
-					if ((value != null))
-					{
-						value.VSTATE = this;
-						this._SNO = value.SNO;
-					}
-					else
-					{
-						this._SNO = default(int);
-					}
-					this.SendPropertyChanged("STATE");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.STATE")]
-	public partial class STATE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _SNO;
-		
-		private string _MSTATE;
-		
-		private EntitySet<PROB> _PROBs;
-		
-		private EntitySet<PROB> _PROBs1;
-		
-		private EntitySet<VREWARD> _VREWARDs;
-		
-		private EntityRef<VSTATE> _VSTATE;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSNOChanging(int value);
-    partial void OnSNOChanged();
-    partial void OnMSTATEChanging(string value);
-    partial void OnMSTATEChanged();
-    #endregion
-		
-		public STATE()
-		{
-			this._PROBs = new EntitySet<PROB>(new Action<PROB>(this.attach_PROBs), new Action<PROB>(this.detach_PROBs));
-			this._PROBs1 = new EntitySet<PROB>(new Action<PROB>(this.attach_PROBs1), new Action<PROB>(this.detach_PROBs1));
-			this._VREWARDs = new EntitySet<VREWARD>(new Action<VREWARD>(this.attach_VREWARDs), new Action<VREWARD>(this.detach_VREWARDs));
-			this._VSTATE = default(EntityRef<VSTATE>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SNO", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int SNO
-		{
-			get
-			{
-				return this._SNO;
-			}
-			set
-			{
-				if ((this._SNO != value))
-				{
-					this.OnSNOChanging(value);
-					this.SendPropertyChanging();
-					this._SNO = value;
-					this.SendPropertyChanged("SNO");
-					this.OnSNOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSTATE", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string MSTATE
-		{
-			get
-			{
-				return this._MSTATE;
-			}
-			set
-			{
-				if ((this._MSTATE != value))
-				{
-					this.OnMSTATEChanging(value);
-					this.SendPropertyChanging();
-					this._MSTATE = value;
-					this.SendPropertyChanged("MSTATE");
-					this.OnMSTATEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_PROB", Storage="_PROBs", ThisKey="SNO", OtherKey="NSNO")]
-		public EntitySet<PROB> PROBs
-		{
-			get
-			{
-				return this._PROBs;
-			}
-			set
-			{
-				this._PROBs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_PROB1", Storage="_PROBs1", ThisKey="SNO", OtherKey="SNO")]
-		public EntitySet<PROB> PROBs1
-		{
-			get
-			{
-				return this._PROBs1;
-			}
-			set
-			{
-				this._PROBs1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_VREWARD", Storage="_VREWARDs", ThisKey="SNO", OtherKey="SNO")]
-		public EntitySet<VREWARD> VREWARDs
-		{
-			get
-			{
-				return this._VREWARDs;
-			}
-			set
-			{
-				this._VREWARDs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_VSTATE", Storage="_VSTATE", ThisKey="SNO", OtherKey="SNO", IsUnique=true, IsForeignKey=false)]
-		public VSTATE VSTATE
-		{
-			get
-			{
-				return this._VSTATE.Entity;
-			}
-			set
-			{
-				VSTATE previousValue = this._VSTATE.Entity;
-				if (((previousValue != value) 
-							|| (this._VSTATE.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._VSTATE.Entity = null;
-						previousValue.STATE = null;
-					}
-					this._VSTATE.Entity = value;
-					if ((value != null))
-					{
-						value.STATE = this;
-					}
-					this.SendPropertyChanged("VSTATE");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_PROBs(PROB entity)
-		{
-			this.SendPropertyChanging();
-			entity.STATE = this;
-		}
-		
-		private void detach_PROBs(PROB entity)
-		{
-			this.SendPropertyChanging();
-			entity.STATE = null;
-		}
-		
-		private void attach_PROBs1(PROB entity)
-		{
-			this.SendPropertyChanging();
-			entity.STATE1 = this;
-		}
-		
-		private void detach_PROBs1(PROB entity)
-		{
-			this.SendPropertyChanging();
-			entity.STATE1 = null;
-		}
-		
-		private void attach_VREWARDs(VREWARD entity)
-		{
-			this.SendPropertyChanging();
-			entity.STATE = this;
-		}
-		
-		private void detach_VREWARDs(VREWARD entity)
-		{
-			this.SendPropertyChanging();
-			entity.STATE = null;
 		}
 	}
 }
