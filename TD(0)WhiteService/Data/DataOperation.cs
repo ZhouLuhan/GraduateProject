@@ -94,5 +94,100 @@ namespace Data
                 whiteTD0.SubmitChanges();
             }
         }
+
+        double SelectVState(string state)
+        {
+            double value;
+            WhiteTD0DataContext whiteTD0 = new WhiteTD0DataContext();
+            var tmp = from c in whiteTD0.STATEs
+                      from o in whiteTD0.VSTATEs
+                      where c.SNO == o.SNO && c.MSTATE == state
+                      select o.VALUE;
+            if (tmp.Count() <= 0)
+            {
+                VSTATE tmps = new VSTATE();
+                tmps.SNO = whiteTD0.STATEs.Where(p => p.MSTATE == state).Single().SNO;
+                tmps.VALUE = 1.0;
+                whiteTD0.VSTATEs.InsertOnSubmit(tmps);
+                whiteTD0.SubmitChanges();
+                value = 1.0;
+            }
+            else value = tmp.Single();
+            return value;
+        }
+
+        double SelectReward(string state, string strategy)
+        {
+            double reward;
+            WhiteTD0DataContext whiteTD0 = new WhiteTD0DataContext();
+            var tmp = from c in whiteTD0.STATEs
+                      from o in whiteTD0.ASTRATEGies
+                      from e in whiteTD0.VREWARDs
+                      where c.SNO == e.SNO && o.ANO == e.ANO && c.MSTATE == state && o.STRATEGY == strategy
+                      select e.REWARD;
+
+            if (tmp.Count() <= 0)
+            {
+                VREWARD tmps = new VREWARD();
+                tmps.SNO = whiteTD0.STATEs.Where(p => p.MSTATE == state).Single().SNO;
+                tmps.ANO = whiteTD0.ASTRATEGies.Where(p => p.STRATEGY == strategy).Single().ANO;
+                tmps.TIMES = 0;
+                tmps.REWARD = 1.0;
+                whiteTD0.VREWARDs.InsertOnSubmit(tmps);
+                whiteTD0.SubmitChanges();
+                reward = 1.0;
+            }
+            else reward = tmp.Single();
+            return reward;
+        }
+
+        int SelectWinTimes(string state, string strategy)
+        {
+            int times;
+            WhiteTD0DataContext whiteTD0 = new WhiteTD0DataContext();
+            var tmp = from c in whiteTD0.STATEs
+                      from o in whiteTD0.ASTRATEGies
+                      from e in whiteTD0.VREWARDs
+                      where c.SNO == e.SNO && o.ANO == e.ANO && c.MSTATE == state && o.STRATEGY == strategy
+                      select e.TIMES;
+            if (tmp.Count() <= 0)
+            {
+                VREWARD tmps = new VREWARD();
+                tmps.SNO = whiteTD0.STATEs.Where(p => p.MSTATE == state).Single().SNO;
+                tmps.ANO = whiteTD0.ASTRATEGies.Where(p => p.STRATEGY == strategy).Single().ANO;
+                tmps.TIMES = 0;
+                tmps.REWARD = 1.0;
+                whiteTD0.VREWARDs.InsertOnSubmit(tmps);
+                whiteTD0.SubmitChanges();
+                times = 0;
+            }
+            else times = tmp.Single();
+            return times;
+        }
+
+        int SelectProbTimes(string state, string strategy, string nstate)
+        {
+            int times;
+            WhiteTD0DataContext whiteTD0 = new WhiteTD0DataContext();
+            var tmp = from c in whiteTD0.STATEs
+                      from f in whiteTD0.STATEs
+                      from o in whiteTD0.ASTRATEGies
+                      from e in whiteTD0.PROBs
+                      where c.SNO == e.SNO && f.SNO == e.NSNO && o.ANO == e.ANO && c.MSTATE == state && f.MSTATE == nstate && o.STRATEGY == strategy
+                      select e.TIMES;
+            if (tmp.Count() <= 0)
+            {
+                PROB tmps = new PROB();
+                tmps.SNO = whiteTD0.STATEs.Where(p => p.MSTATE == state).Single().SNO;
+                tmps.NSNO = whiteTD0.STATEs.Where(p => p.MSTATE == nstate).Single().SNO;
+                tmps.ANO = whiteTD0.ASTRATEGies.Where(p => p.STRATEGY == strategy).Single().ANO;
+                tmps.TIMES = 0;
+                whiteTD0.PROBs.InsertOnSubmit(tmps);
+                whiteTD0.SubmitChanges();
+                times = 0;
+            }
+            else times = tmp.Single();
+            return times;
+        }
     }
 }
