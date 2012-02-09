@@ -17,3 +17,5 @@ D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\GenerateResource.
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\GenerateResource.write.1.tlog
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.exe
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.pdb
+D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\NewAIWindow.baml
+D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\NewAIWindow.g.cs

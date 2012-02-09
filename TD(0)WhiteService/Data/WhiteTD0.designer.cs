@@ -48,7 +48,7 @@ namespace Data
     #endregion
 		
 		public WhiteTD0DataContext() : 
-				base(global::Data.Properties.Settings.Default.AI_TD_0__White_1ConnectionString, mappingSource)
+				base(global::Data.Properties.Settings.Default.AI_TD_0__White_1ConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -169,7 +169,7 @@ namespace Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STRATEGY", DbType="VarChar(4) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STRATEGY", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
 		public string STRATEGY
 		{
 			get
