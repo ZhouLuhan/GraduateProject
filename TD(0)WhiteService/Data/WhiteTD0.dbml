@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AI_TD(0)_White_1" Class="WhiteTD0DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=Krwlng-THINK;Initial Catalog=AI_TD(0)_White_1;Integrated Security=True" SettingsObjectName="Data.Properties.Settings" SettingsPropertyName="AI_TD_0__White_1ConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=zhouluhan-pc;Initial Catalog=AI_TD(0)_White_1;Integrated Security=True" SettingsObjectName="Data.Properties.Settings" SettingsPropertyName="AI_TD_0__White_1ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ASTRATEGY" Member="ASTRATEGies">
     <Type Name="ASTRATEGY">
       <Column Name="ANO" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -42,6 +42,7 @@
       <Column Name="ANO" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TIMES" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="REWARD" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="ASTRATEGY_VREWARD" Member="ASTRATEGY" ThisKey="ANO" OtherKey="ANO" Type="ASTRATEGY" IsForeignKey="true" />
       <Association Name="STATE_VREWARD" Member="STATE" ThisKey="SNO" OtherKey="SNO" Type="STATE" IsForeignKey="true" />
     </Type>

@@ -6,3 +6,5 @@ D:\GraduateProject\TD(0)WhiteService\TD(0)WhiteService\bin\Debug\ChessLaw.pdb
 D:\GraduateProject\TD(0)WhiteService\TD(0)WhiteService\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\GraduateProject\TD(0)WhiteService\TD(0)WhiteService\obj\x86\Debug\TD(0)WhiteService.exe
 D:\GraduateProject\TD(0)WhiteService\TD(0)WhiteService\obj\x86\Debug\TD(0)WhiteService.pdb
+D:\GraduateProject\TD(0)WhiteService\TD(0)WhiteService\bin\Debug\Data.dll
+D:\GraduateProject\TD(0)WhiteService\TD(0)WhiteService\bin\Debug\Data.pdb

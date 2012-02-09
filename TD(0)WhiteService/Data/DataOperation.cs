@@ -5,9 +5,21 @@ using System.Text;
 
 namespace Data
 {
-    class DataOperation
+    public struct VSTimes
     {
-        void InsertState(string state)
+        public double Vs;
+        public int times;
+        public VSTimes(double vs, int prob)
+        {
+            Vs = vs;
+            times = prob;
+        }
+    };
+
+    public class DataOperation
+    {
+
+        public static void InsertState(string state)
         {
             WhiteTD0DataContext whiteTD0 = new WhiteTD0DataContext();
             if (!whiteTD0.STATEs.Any(p => p.MSTATE == state))
@@ -21,7 +33,7 @@ namespace Data
             }
         }
 
-        void InsertStrategy(string strategy)
+        public static void InsertStrategy(string strategy)
         {
             WhiteTD0DataContext whiteTD0 = new WhiteTD0DataContext();
             if (!whiteTD0.ASTRATEGies.Any(p => p.STRATEGY == strategy))
@@ -35,9 +47,11 @@ namespace Data
             }
         }
 
-        void InsertVState(int sno, double value)
+        public static void InsertVState(string state, double value)
         {
             WhiteTD0DataContext whiteTD0 = new WhiteTD0DataContext();
+            int sno = whiteTD0.STATEs.Where(p => p.MSTATE == state).Single().SNO;
+
             if (!whiteTD0.VSTATEs.Any(p => p.SNO == sno))
             {
                 VSTATE tmps = new VSTATE();
@@ -53,49 +67,62 @@ namespace Data
             }
         }
 
-        void InsertVReward(int sno, int ano, int times, double reward)
+        public static void InsertVReward(string state, string stra, bool win)
         {
             WhiteTD0DataContext whiteTD0 = new WhiteTD0DataContext();
+            int sno = whiteTD0.STATEs.Where(p => p.MSTATE == state).Single().SNO;
+            int ano = whiteTD0.ASTRATEGies.Where(p => p.STRATEGY == stra).Single().ANO;
+            int times;
+            if (win) times = 1;
+            else times = 0;
+            double vs = whiteTD0.VSTATEs.Where(p => p.SNO == sno).Single().VALUE;
+
             if (!whiteTD0.VREWARDs.Any(p => p.SNO == sno && p.ANO == ano))
             {
                 VREWARD tmps = new VREWARD();
                 tmps.SNO = sno;
                 tmps.ANO = ano;
                 tmps.TIMES = times;
-                tmps.REWARD = reward;
+                tmps.TOTAL = 1;
+                tmps.REWARD = times;
                 whiteTD0.VREWARDs.InsertOnSubmit(tmps);
                 whiteTD0.SubmitChanges();
             }
             else
             {
                 VREWARD tmps = whiteTD0.VREWARDs.Where(p=>p.SNO == sno && p.ANO == ano).Single();
-                tmps.TIMES = times;
-                tmps.REWARD = reward;
+                tmps.TIMES += times;              
+                tmps.TOTAL++;
+                tmps.REWARD = vs * Convert.ToDouble(times) / tmps.TOTAL;
                 whiteTD0.SubmitChanges();
             }
         }
 
-        void InsertProb(int sno, int ano, int nsno, int times)
+        public static void InsertProb(string state, string stra, string nstate)
         {
             WhiteTD0DataContext whiteTD0 = new WhiteTD0DataContext();
+            int sno = whiteTD0.STATEs.Where(p => p.MSTATE == state).Single().SNO;
+            int ano = whiteTD0.ASTRATEGies.Where(p => p.STRATEGY == stra).Single().ANO;
+            int nsno = whiteTD0.STATEs.Where(p => p.MSTATE == nstate).Single().SNO;
+
             if (!whiteTD0.PROBs.Any(p => p.SNO == sno && p.ANO == ano && p.NSNO == nsno))
             {
                 PROB tmps = new PROB();
                 tmps.SNO = sno;
                 tmps.ANO = ano;
                 tmps.NSNO = nsno;
-                tmps.TIMES = times;
+                tmps.TIMES = 1;
                 whiteTD0.PROBs.InsertOnSubmit(tmps);
                 whiteTD0.SubmitChanges();
             }
             else
             {
-                whiteTD0.PROBs.Where(p => p.SNO == sno && p.ANO == ano && p.NSNO == nsno).Single().TIMES = times;
+                whiteTD0.PROBs.Where(p => p.SNO == sno && p.ANO == ano && p.NSNO == nsno).Single().TIMES++;
                 whiteTD0.SubmitChanges();
             }
         }
 
-        double SelectVState(string state)
+        public static double SelectVState(string state)
         {
             double value;
             WhiteTD0DataContext whiteTD0 = new WhiteTD0DataContext();
@@ -116,7 +143,7 @@ namespace Data
             return value;
         }
 
-        double SelectReward(string state, string strategy)
+        public static double SelectReward(string state, string strategy)
         {
             double reward;
             WhiteTD0DataContext whiteTD0 = new WhiteTD0DataContext();
@@ -165,29 +192,26 @@ namespace Data
             return times;
         }
 
-        int SelectProbTimes(string state, string strategy, string nstate)
+        public static VSTimes[] SelectProbTimes(string state, string strategy)
         {
-            int times;
+            VSTimes[] tmps = new VSTimes[10000];
             WhiteTD0DataContext whiteTD0 = new WhiteTD0DataContext();
             var tmp = from c in whiteTD0.STATEs
-                      from f in whiteTD0.STATEs
                       from o in whiteTD0.ASTRATEGies
                       from e in whiteTD0.PROBs
-                      where c.SNO == e.SNO && f.SNO == e.NSNO && o.ANO == e.ANO && c.MSTATE == state && f.MSTATE == nstate && o.STRATEGY == strategy
-                      select e.TIMES;
-            if (tmp.Count() <= 0)
+                      from f in whiteTD0.VSTATEs
+                      where c.SNO == e.SNO && f.SNO == c.SNO && o.ANO == e.ANO && c.MSTATE == state && o.STRATEGY == strategy
+                      select new
+                      {
+                          f.VALUE,
+                          e.TIMES
+                      };
+            if (tmp.Count() > 0)
             {
-                PROB tmps = new PROB();
-                tmps.SNO = whiteTD0.STATEs.Where(p => p.MSTATE == state).Single().SNO;
-                tmps.NSNO = whiteTD0.STATEs.Where(p => p.MSTATE == nstate).Single().SNO;
-                tmps.ANO = whiteTD0.ASTRATEGies.Where(p => p.STRATEGY == strategy).Single().ANO;
-                tmps.TIMES = 0;
-                whiteTD0.PROBs.InsertOnSubmit(tmps);
-                whiteTD0.SubmitChanges();
-                times = 0;
+                for (int i = 0; i < tmp.Count(); i++)
+                    tmps[i] = new VSTimes(tmp.ElementAt(i).VALUE, tmp.ElementAt(i).TIMES);
             }
-            else times = tmp.Single();
-            return times;
+            return tmps;
         }
     }
 }

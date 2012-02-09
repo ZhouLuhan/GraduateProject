@@ -13,6 +13,13 @@ namespace ChessLaw
         public int SlcC { get; set; }
         public ChessType Conv { get; set; }
 
+        public StrategyState(){}
+
+        public StrategyState(int orgr, int orgc, int slcr, int slcc)
+        {
+            OrgR = orgr; OrgC = orgc; SlcR = slcr; SlcC = slcc; Conv = ChessType.None;
+        }
+
         public static string StaToStr(StrategyState state)
         {
             return "abcde";

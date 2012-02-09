@@ -48,7 +48,7 @@ namespace Data
     #endregion
 		
 		public WhiteTD0DataContext() : 
-				base(global::Data.Properties.Settings.Default.AI_TD_0__White_1ConnectionString1, mappingSource)
+				base(global::Data.Properties.Settings.Default.AI_TD_0__White_1ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -860,6 +860,8 @@ namespace Data
 		
 		private double _REWARD;
 		
+		private int _TOTAL;
+		
 		private EntityRef<ASTRATEGY> _ASTRATEGY;
 		
 		private EntityRef<STATE> _STATE;
@@ -876,6 +878,8 @@ namespace Data
     partial void OnTIMESChanged();
     partial void OnREWARDChanging(double value);
     partial void OnREWARDChanged();
+    partial void OnTOTALChanging(int value);
+    partial void OnTOTALChanged();
     #endregion
 		
 		public VREWARD()
@@ -969,6 +973,26 @@ namespace Data
 					this._REWARD = value;
 					this.SendPropertyChanged("REWARD");
 					this.OnREWARDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL", DbType="Int NOT NULL")]
+		public int TOTAL
+		{
+			get
+			{
+				return this._TOTAL;
+			}
+			set
+			{
+				if ((this._TOTAL != value))
+				{
+					this.OnTOTALChanging(value);
+					this.SendPropertyChanging();
+					this._TOTAL = value;
+					this.SendPropertyChanged("TOTAL");
+					this.OnTOTALChanged();
 				}
 			}
 		}

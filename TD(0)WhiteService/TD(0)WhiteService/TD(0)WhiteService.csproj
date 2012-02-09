@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="ChessAIService.cs" />
     <Compile Include="IChessAIService.cs" />
+    <Compile Include="WhiteTD0_Algorithm.cs" />
     <Compile Include="WindowsService.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -68,6 +69,10 @@
     <ProjectReference Include="..\..\ChessPresenter\ChessLaw\ChessLaw.csproj">
       <Project>{9D200632-A81A-4005-900E-B2DA517D4A64}</Project>
       <Name>ChessLaw</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{4BF582B4-22FD-4037-A16A-0CC86CC9D7C4}</Project>
+      <Name>Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
