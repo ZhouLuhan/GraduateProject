@@ -11,3 +11,16 @@ Affected parameters are:
    logtoconsole = 
    logfile = D:\GraduateProject\TD(0)WhiteService\TD(0)WhiteService\bin\Debug\TD(0)WhiteService.InstallLog
    assemblypath = D:\GraduateProject\TD(0)WhiteService\TD(0)WhiteService\bin\Debug\TD(0)WhiteService.exe
+Installing assembly 'D:\GraduateProject\TD(0)WhiteService\TD(0)WhiteService\bin\Debug\TD(0)WhiteService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\GraduateProject\TD(0)WhiteService\TD(0)WhiteService\bin\Debug\TD(0)WhiteService.InstallLog
+   assemblypath = D:\GraduateProject\TD(0)WhiteService\TD(0)WhiteService\bin\Debug\TD(0)WhiteService.exe
+Installing service ChessAI_TD(0)_V1.0...
+Service ChessAI_TD(0)_V1.0 has been successfully installed.
+Creating EventLog source ChessAI_TD(0)_V1.0 in log Application...
+Committing assembly 'D:\GraduateProject\TD(0)WhiteService\TD(0)WhiteService\bin\Debug\TD(0)WhiteService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\GraduateProject\TD(0)WhiteService\TD(0)WhiteService\bin\Debug\TD(0)WhiteService.InstallLog
+   assemblypath = D:\GraduateProject\TD(0)WhiteService\TD(0)WhiteService\bin\Debug\TD(0)WhiteService.exe

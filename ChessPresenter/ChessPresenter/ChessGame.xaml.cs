@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Timers;
 using ChessLaw;
 
 namespace ChessPresenter
@@ -30,7 +31,7 @@ namespace ChessPresenter
         private ChessState chessState;
         private WinnerType resultState;
         private MainWindow root;
-        private AI_Information whiteAI, blackAI;
+        private AI_Information[] aiInfo;
         private int slcRow, slcCol;
         private StepJudge[] stepJudge;
 
@@ -42,7 +43,8 @@ namespace ChessPresenter
         public ChessGame(MainWindow _father, AI_Information _whiteAI, AI_Information _blackAI)
         {
             InitializeComponent();
-            root = _father; whiteAI = _whiteAI; blackAI = _blackAI;
+            aiInfo = new AI_Information[2];
+            root = _father; aiInfo[0] = _whiteAI; aiInfo[1] = _blackAI;
             this.Closed +=new EventHandler(ChessGame_Closed);
             buttons = new Button[8][]; borders = new Border[8][];
             for (int i = 0; i < 8; ++i)
@@ -138,7 +140,16 @@ namespace ChessPresenter
             {
                 if (resultState == WinnerType.WhiteWin) MessageBox.Show("The White Win!");
                 else MessageBox.Show("The Black Win!");
+                if (aiInfo[0] != null) aiInfo[0].proxy.UpdateResult(resultState == WinnerType.WhiteWin);
+                if (aiInfo[1] != null) aiInfo[1].proxy.UpdateResult(resultState == WinnerType.BlackWin);
                 this.Close();
+            }
+            if (aiInfo[(int)gameState] != null)
+            {
+                string str = aiInfo[(int)gameState].proxy.GetStrategy(chessState, Convert.ToBoolean(1 - gameState));
+                MakeDecision(StrategyState.StrToSta(str));
+                RenderChessBoard();
+                ChangeTurn();
             }
         }
 

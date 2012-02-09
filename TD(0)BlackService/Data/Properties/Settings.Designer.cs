@@ -33,5 +33,16 @@ namespace Data.Properties {
                 return ((string)(this["AI_TD_0__Black_1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Krwlng-THINK;Initial Catalog=AI_TD(0)_Black_1;Integrated Security=Tru" +
+            "e")]
+        public string AI_TD_0__Black_1ConnectionString1 {
+            get {
+                return ((string)(this["AI_TD_0__Black_1ConnectionString1"]));
+            }
+        }
     }
 }

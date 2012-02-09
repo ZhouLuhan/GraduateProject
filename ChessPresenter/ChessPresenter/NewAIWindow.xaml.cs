@@ -18,19 +18,30 @@ namespace ChessPresenter
     /// </summary>
     public partial class NewAIWindow : Window
     {
+        private AI_Information info;
+
         public NewAIWindow()
         {
             InitializeComponent();
         }
 
+        public NewAIWindow(AI_Information _info)
+        {
+            InitializeComponent();
+            info = _info;
+        }
+
         private void Ok_Btn_Click(object sender, RoutedEventArgs e)
         {
-
+            info.ServerName = textBox1.Text;
+            info.URL = textBox2.Text;
+            info.Type = (AIType)(comboBox1.SelectedIndex);
+            this.DialogResult = true;
         }
 
         private void Cancel_Btn_Click(object sender, RoutedEventArgs e)
         {
-
+            this.DialogResult = false;
         }
     }
 }

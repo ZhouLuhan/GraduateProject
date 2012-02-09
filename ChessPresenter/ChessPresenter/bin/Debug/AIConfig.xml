@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Root>
+  <EndPoint>
+    <ServerName>WhiteAITD(0)</ServerName>
+    <URL>http://localhost:8010/ChessAITD0V1_0/</URL>
+    <Type>White</Type>
+  </EndPoint>
+  <EndPoint>
+    <ServerName>BlackAITD0</ServerName>
+    <URL>http://localhost:8010/BlackAITD0_V1_0/</URL>
+    <Type>Black</Type>
+  </EndPoint>
+</Root>
