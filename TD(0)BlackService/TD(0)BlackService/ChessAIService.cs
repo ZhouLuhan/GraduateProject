@@ -128,7 +128,7 @@ namespace TD_0_BlackService
                                 CommonGetStra(whtmp, i, j, ref max, ref VSmax, ref Stra, ref count, state);
                                 break;
 
-                            case ChessType.WQueen:
+                            case ChessType.BQueen:
                                 whtmp = ChessLawExe.QueenStep(state, j, i);
                                 CommonGetStra(whtmp, i, j, ref max, ref VSmax, ref Stra, ref count, state);
                                 break;
