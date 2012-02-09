@@ -1,0 +1,5 @@
+D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\bin\Debug\TD(0)BlackService.dll
+D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\bin\Debug\TD(0)BlackService.pdb
+D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\obj\Debug\ResolveAssemblyReference.cache
+D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\obj\Debug\TD(0)BlackService.dll
+D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\obj\Debug\TD(0)BlackService.pdb
