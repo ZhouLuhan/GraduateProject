@@ -1,0 +1,11 @@
+D:\GraduateProject\TD(0)BlackService\TestAI\bin\Debug\TestAI.exe
+D:\GraduateProject\TD(0)BlackService\TestAI\bin\Debug\TestAI.pdb
+D:\GraduateProject\TD(0)BlackService\TestAI\bin\Debug\ChessLaw.dll
+D:\GraduateProject\TD(0)BlackService\TestAI\bin\Debug\TD(0)BlackService.exe
+D:\GraduateProject\TD(0)BlackService\TestAI\bin\Debug\ChessLaw.pdb
+D:\GraduateProject\TD(0)BlackService\TestAI\bin\Debug\TD(0)BlackService.pdb
+D:\GraduateProject\TD(0)BlackService\TestAI\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\GraduateProject\TD(0)BlackService\TestAI\obj\x86\Debug\TestAI.exe
+D:\GraduateProject\TD(0)BlackService\TestAI\obj\x86\Debug\TestAI.pdb
+D:\GraduateProject\TD(0)BlackService\TestAI\bin\Debug\Data.dll
+D:\GraduateProject\TD(0)BlackService\TestAI\bin\Debug\Data.pdb

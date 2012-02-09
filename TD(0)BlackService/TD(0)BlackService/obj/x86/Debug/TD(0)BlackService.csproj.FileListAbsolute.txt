@@ -5,3 +5,5 @@ D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\bin\Debug\ChessLaw.dll
 D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\bin\Debug\ChessLaw.pdb
 D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\obj\x86\Debug\TD(0)BlackService.exe
 D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\obj\x86\Debug\TD(0)BlackService.pdb
+D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\bin\Debug\Data.dll
+D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\bin\Debug\Data.pdb
