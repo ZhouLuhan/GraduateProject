@@ -1,0 +1,11 @@
+D:\GraduateProject\TD(0)WhiteService\TestProject\bin\Debug\TestProject.exe
+D:\GraduateProject\TD(0)WhiteService\TestProject\bin\Debug\TestProject.pdb
+D:\GraduateProject\TD(0)WhiteService\TestProject\bin\Debug\ChessLaw.dll
+D:\GraduateProject\TD(0)WhiteService\TestProject\bin\Debug\TD(0)WhiteService.exe
+D:\GraduateProject\TD(0)WhiteService\TestProject\bin\Debug\Data.dll
+D:\GraduateProject\TD(0)WhiteService\TestProject\bin\Debug\ChessLaw.pdb
+D:\GraduateProject\TD(0)WhiteService\TestProject\bin\Debug\TD(0)WhiteService.pdb
+D:\GraduateProject\TD(0)WhiteService\TestProject\bin\Debug\Data.pdb
+D:\GraduateProject\TD(0)WhiteService\TestProject\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\GraduateProject\TD(0)WhiteService\TestProject\obj\x86\Debug\TestProject.exe
+D:\GraduateProject\TD(0)WhiteService\TestProject\obj\x86\Debug\TestProject.pdb
