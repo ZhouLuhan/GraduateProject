@@ -26,10 +26,10 @@ namespace ChessLaw
         public static string StaToStr(StrategyState state)
         {
             string ret = string.Empty;
-            ret = ret + (state.OrgR + '0');
-            ret = ret + (state.OrgC + 'a');
-            ret = ret + (state.SlcR + '0');
-            ret = ret + (state.SlcC + 'a');
+            ret = ret + Convert.ToChar(state.OrgR + '0');
+            ret = ret + Convert.ToChar(state.OrgC + 'a');
+            ret = ret + Convert.ToChar(state.SlcR + '0');
+            ret = ret + Convert.ToChar(state.SlcC + 'a');
             ret = ret + ChessState.ChessTypeStr[(int)state.Conv];
             return ret;
         }

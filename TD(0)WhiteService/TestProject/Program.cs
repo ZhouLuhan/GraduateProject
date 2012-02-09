@@ -11,6 +11,7 @@ namespace TestProject
         static void Main(string[] args)
         {
             ChessLaw.ChessState state = new ChessLaw.ChessState();
+            state.SetupNewGame();
             ChessAIService ai = new ChessAIService();
             ai.GameStart();
             string str = ai.GetStrategy(state, true);

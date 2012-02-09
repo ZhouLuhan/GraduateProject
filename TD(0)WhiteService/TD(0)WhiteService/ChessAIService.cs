@@ -104,13 +104,13 @@ namespace TD_0_WhiteService
                                             StrategyState ss = new StrategyState(i, j, row, col);
                                             if(row == 7) ss.Conv = ChessType.WQueen;
                                             double Ns = VPaiNextState(state, ss);
-                                            if (Ns > max) { max = Ns; count = 1; VSmax[0] = Ns; }
-                                            else if (Ns == max) VSmax[count++] = Ns;
+                                            if (Ns > max) { max = Ns; count = 1; VSmax[0] = Ns; Stra[0] = StrategyState.StaToStr(ss); }
+                                            else if (Ns == max) { VSmax[count] = Ns; Stra[count++] = StrategyState.StaToStr(ss); }
 
                                             if(row == 7) ss.Conv = ChessType.WKnight;
                                             Ns = VPaiNextState(state, ss);
-                                            if (Ns > max) { max = Ns; count = 1; VSmax[0] = Ns; }
-                                            else if (Ns == max) VSmax[count++] = Ns;
+                                            if (Ns > max) { max = Ns; count = 1; VSmax[0] = Ns; Stra[0] = StrategyState.StaToStr(ss); }
+                                            else if (Ns == max) { VSmax[count] = Ns; Stra[count++] = StrategyState.StaToStr(ss); }
                                         }
                                     }
                                 }
