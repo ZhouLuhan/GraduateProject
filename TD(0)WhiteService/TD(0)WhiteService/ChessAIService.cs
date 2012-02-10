@@ -12,7 +12,7 @@ namespace TD_0_WhiteService
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "AIService" in both code and config file together.
     public class ChessAIService : IChessAIService
     {
-        string[] State; string[] Strategy;
+        static string[] State; static string[] Strategy;
         double a = 0.2;//学习速率
         double u = 0.2;//折扣率
         int tcount;
