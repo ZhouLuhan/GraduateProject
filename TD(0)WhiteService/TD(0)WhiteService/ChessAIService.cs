@@ -15,7 +15,7 @@ namespace TD_0_WhiteService
         static string[] State; static string[] Strategy;
         double a = 0.2;//学习速率
         double u = 0.2;//折扣率
-        int tcount;
+        static int tcount;
 
         public void GameStart()
         {
@@ -26,7 +26,7 @@ namespace TD_0_WhiteService
 
         double VPaiNextState(ChessState state, StrategyState strategy)
         {
-            int Tot = 0;
+            int Tot = 0; bool isKing = state.State[strategy.SlcR][strategy.SlcC] == ChessType.BKing;
             string mstate = ChessState.StateToStr(state);
             string astrategy = StrategyState.StaToStr(strategy);
 
@@ -49,7 +49,7 @@ namespace TD_0_WhiteService
             double vs = DataOperation.SelectVState(mstate);
 
             //从数据库读出瞬时回报值
-            double r = DataOperation.SelectReward(mstate, astrategy);
+            double r = DataOperation.SelectReward(mstate, astrategy, isKing);
 
             //计算现在的v(s)
             vs = vs + a * (r + u * NS - vs);
@@ -155,9 +155,7 @@ namespace TD_0_WhiteService
             DataOperation.InsertVState(ChessState.StateToStr(state), CurrVs);
 
             //把状态和决策存入数组
-            State = new string[10000];
             State[tcount] = ChessState.StateToStr(state);
-            Strategy = new string[10000];
             Strategy[tcount++] = CurrStr;
 
             return CurrStr;
@@ -172,6 +170,7 @@ namespace TD_0_WhiteService
             //更新VREWARD
             for (int i = 0; i < tcount; i++)
                 DataOperation.InsertVReward(State[i], Strategy[i], isWin);
+
         }
     }
 }

@@ -24,3 +24,16 @@ Affected parameters are:
    logfile = D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\bin\Debug\TD(0)BlackService.InstallLog
    assemblypath = D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\bin\Debug\TD(0)BlackService.exe
 Restoring event log to previous state for source Black_TD0_V1_0.
+正在安装程序集“D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\bin\Debug\TD(0)BlackService.exe”。
+受影响的参数是:
+   logtoconsole = 
+   logfile = D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\bin\Debug\TD(0)BlackService.InstallLog
+   assemblypath = D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\bin\Debug\TD(0)BlackService.exe
+正在安装服务 Black_TD0_V1_0...
+已成功安装服务 Black_TD0_V1_0。
+正在日志 Application 中创建 EventLog 源 Black_TD0_V1_0...
+正在提交程序集“D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\bin\Debug\TD(0)BlackService.exe”。
+受影响的参数是:
+   logtoconsole = 
+   logfile = D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\bin\Debug\TD(0)BlackService.InstallLog
+   assemblypath = D:\GraduateProject\TD(0)BlackService\TD(0)BlackService\bin\Debug\TD(0)BlackService.exe

@@ -45,6 +45,7 @@ namespace ChessPresenter
             InitializeComponent();
             aiInfo = new AI_Information[2];
             root = _father; aiInfo[0] = _whiteAI; aiInfo[1] = _blackAI;
+            for (int i = 0; i < 2; ++i) if (aiInfo[i] != null) aiInfo[i].proxy.GameStart();
             this.Closed +=new EventHandler(ChessGame_Closed);
             buttons = new Button[8][]; borders = new Border[8][];
             for (int i = 0; i < 8; ++i)
@@ -142,7 +143,7 @@ namespace ChessPresenter
                 else MessageBox.Show("The Black Win!");
                 if (aiInfo[0] != null) aiInfo[0].proxy.UpdateResult(resultState == WinnerType.WhiteWin);
                 if (aiInfo[1] != null) aiInfo[1].proxy.UpdateResult(resultState == WinnerType.BlackWin);
-                this.Close();
+                this.Close(); return;
             }
             if (aiInfo[(int)gameState] != null)
             {

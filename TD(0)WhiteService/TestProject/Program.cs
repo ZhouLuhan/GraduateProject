@@ -15,6 +15,8 @@ namespace TestProject
             ChessAIService ai = new ChessAIService();
             ai.GameStart();
             string str = ai.GetStrategy(state, true);
+            ai.GetStrategy(state, true);
+            ai.UpdateResult(true);
             Console.WriteLine(str);
         }
     }

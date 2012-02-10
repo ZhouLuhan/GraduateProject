@@ -12,7 +12,7 @@ namespace BasicWCFTrial
         static void Main(string[] args)
         {
             ServiceHost host = new ServiceHost(typeof(ChessAIService));
-            host.AddServiceEndpoint(typeof(IChessAIService), new BasicHttpBinding(), "http://localhost:8012/HelloWorld/");
+            host.AddServiceEndpoint(typeof(IChessAIService), new BasicHttpBinding(), "http://localhost:8010/ChessAITD0V1_0/");
             host.Open();
             Console.WriteLine("Service Start");
             Console.ReadLine();
