@@ -155,7 +155,9 @@ namespace TD_0_WhiteService
             DataOperation.InsertVState(ChessState.StateToStr(state), CurrVs);
 
             //把状态和决策存入数组
+            State = new string[10000];
             State[tcount] = ChessState.StateToStr(state);
+            Strategy = new string[10000];
             Strategy[tcount++] = CurrStr;
 
             return CurrStr;
