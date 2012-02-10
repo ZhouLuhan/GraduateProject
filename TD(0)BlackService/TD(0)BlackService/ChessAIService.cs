@@ -9,10 +9,10 @@ namespace TD_0_BlackService
 {
     public class ChessAIService : IChessAIService
     {
-        string[] State; string[] Strategy;
+        static string[] State; static string[] Strategy;
         double a = 0.2;//学习速率
         double u = 0.2;//折扣率
-        int tcount;
+        static int tcount;
 
         public void GameStart()
         {
@@ -23,7 +23,7 @@ namespace TD_0_BlackService
 
         double VPaiNextState(ChessState state, StrategyState strategy)
         {
-            int Tot = 0;
+            int Tot = 0; bool isKing = state.State[strategy.SlcR][strategy.SlcC] == ChessType.WKing;
             string mstate = ChessState.StateToStr(state);
             string astrategy = StrategyState.StaToStr(strategy);
 
@@ -46,7 +46,7 @@ namespace TD_0_BlackService
             double vs = DataOperation.SelectVState(mstate);
 
             //从数据库读出瞬时回报值
-            double r = DataOperation.SelectReward(mstate, astrategy);
+            double r = DataOperation.SelectReward(mstate, astrategy, isKing);
 
             //计算现在的v(s)
             vs = vs + a * (r + u * NS - vs);
@@ -128,7 +128,7 @@ namespace TD_0_BlackService
                                 CommonGetStra(whtmp, i, j, ref max, ref VSmax, ref Stra, ref count, state);
                                 break;
 
-                            case ChessType.WQueen:
+                            case ChessType.BQueen:
                                 whtmp = ChessLawExe.QueenStep(state, j, i);
                                 CommonGetStra(whtmp, i, j, ref max, ref VSmax, ref Stra, ref count, state);
                                 break;

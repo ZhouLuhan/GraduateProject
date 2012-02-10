@@ -143,7 +143,7 @@ namespace Data
             return value;
         }
 
-        public static double SelectReward(string state, string strategy)
+        public static double SelectReward(string state, string strategy, bool isKing)
         {
             double reward;
             WhiteTD0DataContext whiteTD0 = new WhiteTD0DataContext();
@@ -159,10 +159,11 @@ namespace Data
                 tmps.SNO = whiteTD0.STATEs.Where(p => p.MSTATE == state).Single().SNO;
                 tmps.ANO = whiteTD0.ASTRATEGies.Where(p => p.STRATEGY == strategy).Single().ANO;
                 tmps.TIMES = 0;
-                tmps.REWARD = 1.0;
+                if (isKing) tmps.REWARD = 100.0;
+                else tmps.REWARD = 1.0;
                 whiteTD0.VREWARDs.InsertOnSubmit(tmps);
                 whiteTD0.SubmitChanges();
-                reward = 1.0;
+                reward = tmps.REWARD;
             }
             else reward = tmp.Single();
             return reward;
@@ -194,6 +195,7 @@ namespace Data
 
         public static VSTimes[] SelectProbTimes(string state, string strategy)
         {
+            int i = 0;
             VSTimes[] tmps = new VSTimes[10000];
             WhiteTD0DataContext whiteTD0 = new WhiteTD0DataContext();
             var tmp = from c in whiteTD0.STATEs
@@ -208,8 +210,8 @@ namespace Data
                       };
             if (tmp.Count() > 0)
             {
-                for (int i = 0; i < tmp.Count(); i++)
-                    tmps[i] = new VSTimes(tmp.ElementAt(i).VALUE, tmp.ElementAt(i).TIMES);
+                foreach(var c in tmp)
+                    tmps[i++] = new VSTimes(c.VALUE, c.TIMES);
             }
             return tmps;
         }
