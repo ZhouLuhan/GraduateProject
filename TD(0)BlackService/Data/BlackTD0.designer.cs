@@ -48,7 +48,7 @@ namespace Data
     #endregion
 		
 		public BlackTD0DataContext() : 
-				base(global::Data.Properties.Settings.Default.AI_TD_0__Black_1ConnectionString1, mappingSource)
+				base(global::Data.Properties.Settings.Default.AI_TD_0__Black_1ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
