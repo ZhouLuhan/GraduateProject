@@ -1,0 +1,8 @@
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFClient\BasicWCFClient\bin\Debug\BasicWCFClient.exe.config
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFClient\BasicWCFClient\bin\Debug\BasicWCFClient.exe
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFClient\BasicWCFClient\bin\Debug\BasicWCFClient.pdb
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFClient\BasicWCFClient\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFClient\BasicWCFClient\obj\x86\Debug\BasicWCFClient.exe
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFClient\BasicWCFClient\obj\x86\Debug\BasicWCFClient.pdb
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFClient\BasicWCFClient\bin\Debug\ChessLaw.dll
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFClient\BasicWCFClient\bin\Debug\ChessLaw.pdb
