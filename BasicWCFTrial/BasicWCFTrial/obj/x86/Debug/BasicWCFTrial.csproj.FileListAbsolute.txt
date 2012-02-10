@@ -1,0 +1,12 @@
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFTrial\BasicWCFTrial\bin\Debug\BasicWCFTrial.exe.config
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFTrial\BasicWCFTrial\bin\Debug\BasicWCFTrial.exe
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFTrial\BasicWCFTrial\bin\Debug\BasicWCFTrial.pdb
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFTrial\BasicWCFTrial\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFTrial\BasicWCFTrial\obj\x86\Debug\BasicWCFTrial.exe
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFTrial\BasicWCFTrial\obj\x86\Debug\BasicWCFTrial.pdb
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFTrial\BasicWCFTrial\bin\Debug\TD(0)WhiteService.exe
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFTrial\BasicWCFTrial\bin\Debug\ChessLaw.dll
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFTrial\BasicWCFTrial\bin\Debug\Data.dll
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFTrial\BasicWCFTrial\bin\Debug\TD(0)WhiteService.pdb
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFTrial\BasicWCFTrial\bin\Debug\ChessLaw.pdb
+C:\Users\Krwlng\Documents\Visual Studio 2010\Projects\BasicWCFTrial\BasicWCFTrial\bin\Debug\Data.pdb
