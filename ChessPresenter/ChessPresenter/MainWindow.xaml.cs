@@ -148,11 +148,7 @@ namespace ChessPresenter
             AI_Information ai_a = AI_Construct(WhiteComboBox);
             AI_Information ai_b = AI_Construct(BlackComboBox);
             ChessGame chessGameWindow = new ChessGame(this, ai_a, ai_b);
-            if (ai_a == null || ai_b == null)
-            {
-                chessGameWindow.Show();
-                this.Hide();
-            }
+            chessGameWindow.Show(); this.Hide();
         }
     }
 }
