@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Timers;
+using System.Windows.Threading;
 using ChessLaw;
 
 namespace ChessPresenter
@@ -72,6 +73,12 @@ namespace ChessPresenter
             }
             SetupReflect();
             SetupNewGame();
+            Loaded += GameLoaded;
+        }
+
+        void GameLoaded(object sender, RoutedEventArgs e)
+        {
+            ChangeTurn();
         }
 
         void SetupReflect()
@@ -100,11 +107,11 @@ namespace ChessPresenter
             chessState.State[7][3] = ChessType.BQueen; chessState.State[7][4] = ChessType.BKing;
             for (int i = 0; i < 8; ++i) chessState.State[6][i] = ChessType.BPawn;
             RenderChessBoard();
-            ChangeTurn();
         }
 
         void RenderChessBoard()
         {
+            for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) borders[i][j].Visibility = System.Windows.Visibility.Hidden;
             for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j)
                 {
                     switch (chessState.State[i][j])
@@ -147,11 +154,20 @@ namespace ChessPresenter
             }
             if (aiInfo[(int)gameState] != null)
             {
-                string str = aiInfo[(int)gameState].proxy.GetStrategy(chessState, Convert.ToBoolean(1 - gameState));
-                MakeDecision(StrategyState.StrToSta(str));
-                RenderChessBoard();
-                ChangeTurn();
+                DispatcherTimer timer = new DispatcherTimer();
+                timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
+                timer.Tick += TimerTick;
+                timer.Start();
             }
+        }
+
+        private void TimerTick(object sender, EventArgs e)
+        {
+            (sender as DispatcherTimer).Stop();
+            string str = aiInfo[(int)gameState].proxy.GetStrategy(chessState, Convert.ToBoolean(1 - gameState));
+            MakeDecision(StrategyState.StrToSta(str));
+            RenderChessBoard();
+            ChangeTurn();
         }
 
         void ChessBoardGrid_Click(object sender, RoutedEventArgs e)
@@ -164,6 +180,7 @@ namespace ChessPresenter
                 for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) borders[i][j].Visibility = System.Windows.Visibility.Hidden;
                 borders[cr][cc].Visibility = System.Windows.Visibility.Visible;
                 if (chessState.State[cr][cc] == ChessType.None) return;
+                if (aiInfo[(int)gameState] != null) return;
                 if (Convert.ToBoolean(Convert.ToInt16((gameState == GameState.WhiteTurn)) ^ Convert.ToInt16(chessState.IsBlackChess(cr, cc))))
                 {
                     Boolean[][] reachable = stepJudge[Convert.ToInt32(chessState.State[cr][cc])](chessState, cc, cr);
@@ -173,7 +190,6 @@ namespace ChessPresenter
             }
             else
             {
-                for (int i = 0; i < 8; ++i) for (int j = 0; j < 8; ++j) borders[i][j].Visibility = System.Windows.Visibility.Hidden;
                 StrategyState str = new StrategyState();
                 str.SlcC = cc; str.SlcR = cr; str.OrgC = slcCol; str.OrgR = slcRow;
                 if (chessState.State[slcRow][slcCol] == ChessType.WPawn && cr == 7)
