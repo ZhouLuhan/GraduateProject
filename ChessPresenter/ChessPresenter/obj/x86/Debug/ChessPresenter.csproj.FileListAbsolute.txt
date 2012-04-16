@@ -19,3 +19,5 @@ D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.ex
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\ChessPresenter.pdb
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\NewAIWindow.baml
 D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\NewAIWindow.g.cs
+D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\PractiseWindow.baml
+D:\GraduateProject\ChessPresenter\ChessPresenter\obj\x86\Debug\PractiseWindow.g.cs

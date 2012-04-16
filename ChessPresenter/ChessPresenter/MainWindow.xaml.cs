@@ -150,5 +150,18 @@ namespace ChessPresenter
             ChessGame chessGameWindow = new ChessGame(this, ai_a, ai_b);
             chessGameWindow.Show(); this.Hide();
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            AI_Information ai_a = AI_Construct(WhiteComboBox);
+            AI_Information ai_b = AI_Construct(BlackComboBox);
+            if (ai_a == null || ai_b == null)
+            {
+                MessageBox.Show("This function need both gamers are AI, plz choose the AI type for them");
+                return;
+            }
+            PractiseWindow practise = new PractiseWindow(this, ai_a, ai_b);
+            practise.Show(); this.Hide();
+        }
     }
 }
