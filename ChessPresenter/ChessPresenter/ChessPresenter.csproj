@@ -86,6 +86,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PractiseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NewAIWindow.xaml.cs">
@@ -93,6 +97,9 @@
     </Compile>
     <Compile Include="PawnPromotion.xaml.cs">
       <DependentUpon>PawnPromotion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PractiseWindow.xaml.cs">
+      <DependentUpon>PractiseWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

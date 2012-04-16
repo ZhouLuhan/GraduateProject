@@ -1,0 +1,42 @@
+The pracise is running and you cannot operate the application.
+Please wait for the end of the practise.
+Log file name: Prc2012_3_31_1_50_51.txt
+Time: 2012/3/31 1:50:51
+
+----------------------------------------------
+
+Round: 1
+Winner: White
+Total Turns: 59
+Time: 2012/3/31 1:53:07
+
+----------------------------------------------
+
+Round: 2
+Winner: Black
+Total Turns: 24
+Time: 2012/3/31 1:54:09
+
+----------------------------------------------
+
+Round: 3
+Winner: Black
+Total Turns: 38
+Time: 2012/3/31 1:55:23
+
+----------------------------------------------
+
+Round: 4
+Winner: White
+Total Turns: 23
+Time: 2012/3/31 1:56:11
+
+----------------------------------------------
+
+Round: 5
+Winner: Black
+Total Turns: 46
+Time: 2012/3/31 1:58:13
+
+----------------------------------------------
+
