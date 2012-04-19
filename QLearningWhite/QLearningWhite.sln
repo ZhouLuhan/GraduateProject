@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessLaw", "..\ChessPresent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAI", "TestAI\TestAI.csproj", "{5C2E53DD-193C-430C-AB96-210F6700A38B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{7F8BEA6A-0238-4BE8-A079-28DDFEF42F03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{5C2E53DD-193C-430C-AB96-210F6700A38B}.Release|Mixed Platforms.Build.0 = Release|x86
 		{5C2E53DD-193C-430C-AB96-210F6700A38B}.Release|x86.ActiveCfg = Release|x86
 		{5C2E53DD-193C-430C-AB96-210F6700A38B}.Release|x86.Build.0 = Release|x86
+		{7F8BEA6A-0238-4BE8-A079-28DDFEF42F03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F8BEA6A-0238-4BE8-A079-28DDFEF42F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F8BEA6A-0238-4BE8-A079-28DDFEF42F03}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7F8BEA6A-0238-4BE8-A079-28DDFEF42F03}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7F8BEA6A-0238-4BE8-A079-28DDFEF42F03}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7F8BEA6A-0238-4BE8-A079-28DDFEF42F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F8BEA6A-0238-4BE8-A079-28DDFEF42F03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F8BEA6A-0238-4BE8-A079-28DDFEF42F03}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7F8BEA6A-0238-4BE8-A079-28DDFEF42F03}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7F8BEA6A-0238-4BE8-A079-28DDFEF42F03}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

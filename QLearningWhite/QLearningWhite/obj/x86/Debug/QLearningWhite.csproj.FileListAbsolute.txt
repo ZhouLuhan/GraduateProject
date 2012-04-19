@@ -6,3 +6,5 @@ D:\GraduateProject\QLearningWhite\QLearningWhite\bin\Debug\ChessLaw.pdb
 D:\GraduateProject\QLearningWhite\QLearningWhite\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\GraduateProject\QLearningWhite\QLearningWhite\obj\x86\Debug\QLearningWhite.exe
 D:\GraduateProject\QLearningWhite\QLearningWhite\obj\x86\Debug\QLearningWhite.pdb
+D:\GraduateProject\QLearningWhite\QLearningWhite\bin\Debug\Data.dll
+D:\GraduateProject\QLearningWhite\QLearningWhite\bin\Debug\Data.pdb
