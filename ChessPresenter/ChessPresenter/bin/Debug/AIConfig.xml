@@ -10,4 +10,9 @@
     <URL>http://localhost:8010/BlackAITD0_V1_0/</URL>
     <Type>Black</Type>
   </EndPoint>
+  <EndPoint>
+    <ServerName>WhiteAIQlearning</ServerName>
+    <URL>http://localhost:8010/QlearningWhite/</URL>
+    <Type>White</Type>
+  </EndPoint>
 </Root>

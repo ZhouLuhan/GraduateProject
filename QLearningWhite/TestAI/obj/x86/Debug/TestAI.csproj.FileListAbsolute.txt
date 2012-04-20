@@ -7,3 +7,5 @@ D:\GraduateProject\QLearningWhite\TestAI\bin\Debug\QLearningWhite.pdb
 D:\GraduateProject\QLearningWhite\TestAI\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\GraduateProject\QLearningWhite\TestAI\obj\x86\Debug\TestAI.exe
 D:\GraduateProject\QLearningWhite\TestAI\obj\x86\Debug\TestAI.pdb
+D:\GraduateProject\QLearningWhite\TestAI\bin\Debug\Data.dll
+D:\GraduateProject\QLearningWhite\TestAI\bin\Debug\Data.pdb

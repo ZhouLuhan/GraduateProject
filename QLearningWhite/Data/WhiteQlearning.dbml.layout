@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.875" name="WhiteQlearning">
+  <DataContextMoniker Name="/WhiteQlearningDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f814fb24-4aa1-4628-9f79-41722d2b853f" absoluteBounds="0.75, 1.5, 2, 1.1895064290364585">
+      <DataClassMoniker Name="/WhiteQlearningDataContext/ASTRATEGY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00818412-67dd-493f-9647-daa31026429b" absoluteBounds="0.765, 1.96, 1.9700000000000002, 0.62950642903645826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5142c475-4ec7-428c-912d-737b470dcd87" absoluteBounds="3.5, 3.875, 2, 1.3805261230468755">
+      <DataClassMoniker Name="/WhiteQlearningDataContext/QSTATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05128fd1-8137-45bb-96cd-8c45ae373291" absoluteBounds="3.515, 4.335, 1.9700000000000002, 0.820526123046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c31d7def-8c82-47ef-b4c1-997f200f6192" absoluteBounds="0.75, 4, 2, 1.189506429036459">
+      <DataClassMoniker Name="/WhiteQlearningDataContext/STATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="699fd69c-f8f6-4681-a40e-b335abc386b3" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.62950642903645826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.09475321451823); (4.5 : 2.09475321451823); (4.5 : 3.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WhiteQlearningDataContext/ASTRATEGY/ASTRATEGY_QSTATE" />
+      <nodes>
+        <classShapeMoniker Id="f814fb24-4aa1-4628-9f79-41722d2b853f" />
+        <classShapeMoniker Id="5142c475-4ec7-428c-912d-737b470dcd87" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.93988474527995); (3.5 : 4.93988474527995)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WhiteQlearningDataContext/STATE/STATE_QSTATE" />
+      <nodes>
+        <classShapeMoniker Id="c31d7def-8c82-47ef-b4c1-997f200f6192" />
+        <classShapeMoniker Id="5142c475-4ec7-428c-912d-737b470dcd87" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="de2f00e9-0e98-465f-abcf-0dd4a7ec2a14" absoluteBounds="3.625, 6.875, 2, 1.7625655110677081">
+      <DataClassMoniker Name="/WhiteQlearningDataContext/VREWARD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff89bd30-635f-469b-a62b-87158d162d5e" absoluteBounds="3.64, 7.335, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.42338232177734); (4.41666666666667 : 2.42338232177734 : JumpStart); (4.58333333333333 : 2.42338232177734 : JumpEnd); (5.59375 : 2.42338232177734); (5.59375 : 6.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WhiteQlearningDataContext/ASTRATEGY/ASTRATEGY_VREWARD" />
+      <nodes>
+        <classShapeMoniker Id="f814fb24-4aa1-4628-9f79-41722d2b853f" />
+        <classShapeMoniker Id="de2f00e9-0e98-465f-abcf-0dd4a7ec2a14" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 5.18950642903646); (1.75 : 7.75628275553385); (3.625 : 7.75628275553385)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WhiteQlearningDataContext/STATE/STATE_VREWARD" />
+      <nodes>
+        <classShapeMoniker Id="c31d7def-8c82-47ef-b4c1-997f200f6192" />
+        <classShapeMoniker Id="de2f00e9-0e98-465f-abcf-0dd4a7ec2a14" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
