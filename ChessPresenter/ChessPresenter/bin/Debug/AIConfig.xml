@@ -15,4 +15,9 @@
     <URL>http://localhost:8010/QlearningWhite/</URL>
     <Type>White</Type>
   </EndPoint>
+  <EndPoint>
+    <ServerName>QlearningBlack</ServerName>
+    <URL>http://localhost:8010/QlearningBlack/</URL>
+    <Type>Black</Type>
+  </EndPoint>
 </Root>

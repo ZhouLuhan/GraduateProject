@@ -73,6 +73,10 @@
       <Project>{9D200632-A81A-4005-900E-B2DA517D4A64}</Project>
       <Name>ChessLaw</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{4A3B5F1A-1C97-45D0-B239-C2DA354BA714}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

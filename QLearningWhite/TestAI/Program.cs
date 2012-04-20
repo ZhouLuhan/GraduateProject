@@ -19,10 +19,8 @@ namespace TestAI
             proxy.GameStart();
             string str = proxy.GetStrategy(state, true);
             Console.WriteLine(str);
-            Console.WriteLine(ChessAIService.tcount);
     
             proxy.UpdateResult(true);
-            //Console.WriteLine(ChessAIService.tcount);
             Console.ReadLine();
         }
     }

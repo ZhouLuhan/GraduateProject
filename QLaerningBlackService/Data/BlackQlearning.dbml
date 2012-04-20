@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AI_Qlearning_Black_1" Class="BlackQlearningDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ZHOULUHAN-PC;Initial Catalog=AI_Qlearning_Black_1;Integrated Security=True" SettingsObjectName="Data.Properties.Settings" SettingsPropertyName="AI_Qlearning_Black_1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ASTRATEGY" Member="ASTRATEGies">
+    <Type Name="ASTRATEGY">
+      <Column Name="ANO" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="STRATEGY" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Association Name="ASTRATEGY_QSTATE" Member="QSTATEs" ThisKey="ANO" OtherKey="ANO" Type="QSTATE" />
+      <Association Name="ASTRATEGY_VREWARD" Member="VREWARDs" ThisKey="ANO" OtherKey="ANO" Type="VREWARD" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QSTATE" Member="QSTATEs">
+    <Type Name="QSTATE">
+      <Column Name="SNO" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ANO" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VALUE" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="ASTRATEGY_QSTATE" Member="ASTRATEGY" ThisKey="ANO" OtherKey="ANO" Type="ASTRATEGY" IsForeignKey="true" />
+      <Association Name="STATE_QSTATE" Member="STATE" ThisKey="SNO" OtherKey="SNO" Type="STATE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.STATE" Member="STATEs">
+    <Type Name="STATE">
+      <Column Name="SNO" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MSTATE" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="STATE_QSTATE" Member="QSTATEs" ThisKey="SNO" OtherKey="SNO" Type="QSTATE" />
+      <Association Name="STATE_VREWARD" Member="VREWARDs" ThisKey="SNO" OtherKey="SNO" Type="VREWARD" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VREWARD" Member="VREWARDs">
+    <Type Name="VREWARD">
+      <Column Name="SNO" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ANO" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TIMES" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="REWARD" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ASTRATEGY_VREWARD" Member="ASTRATEGY" ThisKey="ANO" OtherKey="ANO" Type="ASTRATEGY" IsForeignKey="true" />
+      <Association Name="STATE_VREWARD" Member="STATE" ThisKey="SNO" OtherKey="SNO" Type="STATE" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

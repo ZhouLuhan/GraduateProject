@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BlackQlearning">
+  <DataContextMoniker Name="/BlackQlearningDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f7f9a45e-975a-42f8-a35c-09596bbf9d81" absoluteBounds="0.75, 4, 2, 1.1895064290364585">
+      <DataClassMoniker Name="/BlackQlearningDataContext/ASTRATEGY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb00c89e-cd12-4e5c-9636-155f2cfa6b7c" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.62950642903645826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="31f72ee3-b345-4cb5-9eb6-d4c6bdbde08b" absoluteBounds="3.5, 4, 2, 1.3805261230468746">
+      <DataClassMoniker Name="/BlackQlearningDataContext/QSTATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="996170c2-f3a6-4dad-a74c-df2bd82cd5c5" absoluteBounds="3.515, 4.46, 1.9700000000000002, 0.820526123046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1dca652a-040f-44f1-8121-b7c73a531c47" absoluteBounds="0.75, 6.875, 2, 1.1895064290364594">
+      <DataClassMoniker Name="/BlackQlearningDataContext/STATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f342a2e-585c-48f2-981d-c908d5f15409" absoluteBounds="0.765, 7.335, 1.9700000000000002, 0.62950642903645826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="339c5fb5-e338-4064-9232-ce1e297f3575" absoluteBounds="3.5, 0.75, 2, 1.7625655110677081">
+      <DataClassMoniker Name="/BlackQlearningDataContext/VREWARD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8aa6cb1-880e-4a50-b9d9-8f4a024d2961" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.59475321451823); (3.04166666666667 : 4.59475321451823 : JumpStart); (3.20833333333333 : 4.59475321451823 : JumpEnd); (3.5 : 4.59475321451823)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BlackQlearningDataContext/ASTRATEGY/ASTRATEGY_QSTATE" />
+      <nodes>
+        <classShapeMoniker Id="f7f9a45e-975a-42f8-a35c-09596bbf9d81" />
+        <classShapeMoniker Id="31f72ee3-b345-4cb5-9eb6-d4c6bdbde08b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.46975321451823); (4.5 : 7.46975321451823); (4.5 : 5.38052612304687)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BlackQlearningDataContext/STATE/STATE_QSTATE" />
+      <nodes>
+        <classShapeMoniker Id="1dca652a-040f-44f1-8121-b7c73a531c47" />
+        <classShapeMoniker Id="31f72ee3-b345-4cb5-9eb6-d4c6bdbde08b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 4); (1.75 : 1.63128275553385); (3.5 : 1.63128275553385)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BlackQlearningDataContext/ASTRATEGY/ASTRATEGY_VREWARD" />
+      <nodes>
+        <classShapeMoniker Id="f7f9a45e-975a-42f8-a35c-09596bbf9d81" />
+        <classShapeMoniker Id="339c5fb5-e338-4064-9232-ce1e297f3575" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.875); (3.125 : 6.5); (3.125 : 2.10317613330078); (3.5 : 2.10317613330078)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BlackQlearningDataContext/STATE/STATE_VREWARD" />
+      <nodes>
+        <classShapeMoniker Id="1dca652a-040f-44f1-8121-b7c73a531c47" />
+        <classShapeMoniker Id="339c5fb5-e338-4064-9232-ce1e297f3575" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
