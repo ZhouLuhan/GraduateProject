@@ -11,3 +11,16 @@ Affected parameters are:
    logtoconsole = 
    logfile = D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QLaerningBlackService.InstallLog
    assemblypath = D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QLaerningBlackService.exe
+正在安装程序集“D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QlaerningBlackService.exe”。
+受影响的参数是:
+   logtoconsole = 
+   logfile = D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QlaerningBlackService.InstallLog
+   assemblypath = D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QlaerningBlackService.exe
+正在安装服务 QLearningBlack...
+已成功安装服务 QLearningBlack。
+正在日志 Application 中创建 EventLog 源 QLearningBlack...
+正在提交程序集“D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QlaerningBlackService.exe”。
+受影响的参数是:
+   logtoconsole = 
+   logfile = D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QlaerningBlackService.InstallLog
+   assemblypath = D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QlaerningBlackService.exe

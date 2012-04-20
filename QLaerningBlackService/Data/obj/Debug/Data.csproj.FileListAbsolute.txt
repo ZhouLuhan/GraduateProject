@@ -1,0 +1,6 @@
+D:\GraduateProject\QLaerningBlackService\Data\bin\Debug\Data.dll.config
+D:\GraduateProject\QLaerningBlackService\Data\bin\Debug\Data.dll
+D:\GraduateProject\QLaerningBlackService\Data\bin\Debug\Data.pdb
+D:\GraduateProject\QLaerningBlackService\Data\obj\Debug\ResolveAssemblyReference.cache
+D:\GraduateProject\QLaerningBlackService\Data\obj\Debug\Data.dll
+D:\GraduateProject\QLaerningBlackService\Data\obj\Debug\Data.pdb

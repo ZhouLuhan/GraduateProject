@@ -6,7 +6,6 @@ using System.Text;
 namespace Data
 {
     
-
     public struct VSTimes
     {
         public double Vs;

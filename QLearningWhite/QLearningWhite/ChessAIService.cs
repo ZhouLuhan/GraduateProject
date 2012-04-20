@@ -15,7 +15,7 @@ namespace QLearningWhite
         static string[] State; static string[] Strategy;
         double a = 0.2;//学习速率
         double u = 0.2;//折扣率
-        public static int tcount;
+        static int tcount;
 
         public void GameStart()
         {
@@ -174,7 +174,6 @@ namespace QLearningWhite
             //更新VREWARD
             for (int i = 0; i < tcount; i++)
                  DataOperation.InsertVReward(State[i], Strategy[i], isWin);
-                //DataOperation.InsertQState(State[i], Strategy[i], 1.0);
 
         }
     }
