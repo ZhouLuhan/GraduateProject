@@ -1,0 +1,8 @@
+D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QLaerningBlackService.exe.config
+D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QLaerningBlackService.exe
+D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QLaerningBlackService.pdb
+D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\ChessLaw.dll
+D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\ChessLaw.pdb
+D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\obj\x86\Debug\QLaerningBlackService.exe
+D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\obj\x86\Debug\QLaerningBlackService.pdb

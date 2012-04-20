@@ -1,0 +1,7 @@
+D:\GraduateProject\QLaerningBlackService\TestAI\bin\Debug\TestAI.exe
+D:\GraduateProject\QLaerningBlackService\TestAI\bin\Debug\TestAI.pdb
+D:\GraduateProject\QLaerningBlackService\TestAI\bin\Debug\ChessLaw.dll
+D:\GraduateProject\QLaerningBlackService\TestAI\bin\Debug\ChessLaw.pdb
+D:\GraduateProject\QLaerningBlackService\TestAI\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\GraduateProject\QLaerningBlackService\TestAI\obj\x86\Debug\TestAI.exe
+D:\GraduateProject\QLaerningBlackService\TestAI\obj\x86\Debug\TestAI.pdb

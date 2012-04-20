@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Menu.master.cs" Inherits="HospitalHelper.Menu" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 690px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+<table>
+<td>
+        <asp:TreeView ID="TreeView1" runat="server">
+        <Nodes><asp:TreeNode Text="病人信息">
+                    <asp:TreeNode Text="病人登记" NavigateUrl="~/NewPatient.aspx"/>
+                    <asp:TreeNode Text="病人查询"/>
+               </asp:TreeNode>
+        </Nodes>
+        </asp:TreeView>
+</td>
+<td class="style1">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        </td>
+  </table>
+    </form>
+</body>
+</html>

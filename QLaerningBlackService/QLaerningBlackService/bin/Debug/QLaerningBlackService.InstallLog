@@ -1,0 +1,13 @@
+﻿Installing assembly 'D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QLaerningBlackService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QLaerningBlackService.InstallLog
+   assemblypath = D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QLaerningBlackService.exe
+Installing service QLearningBlack...
+Service QLearningBlack has been successfully installed.
+Creating EventLog source QLearningBlack in log Application...
+Committing assembly 'D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QLaerningBlackService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QLaerningBlackService.InstallLog
+   assemblypath = D:\GraduateProject\QLaerningBlackService\QLaerningBlackService\bin\Debug\QLaerningBlackService.exe
