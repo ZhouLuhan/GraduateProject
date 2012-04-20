@@ -3,38 +3,49 @@ CodeBehind="OperatorManager.aspx.cs" Inherits="HospitalHelper.OperatorManager" %
 
  <asp:Content ID="Content1" ContentPlaceHolderID ="ContentPlaceHolder1" runat="server">
         
-       
-    <form id="form1" runat="server">
-
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-        DataSourceID="SqlDataSource1" AllowPaging="True" 
-        onselectedindexchanged="GridView1_SelectedIndexChanged" PageIndex="1">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"
+        DataKeyNames="HID" DataSourceID="SqlDataSource1" AllowPaging="True" PageIndex="1">
         <Columns>
-            <asp:BoundField DataField="HID" HeaderText="用户名" SortExpression="HID" />
+            <asp:BoundField DataField="HID" HeaderText="用户名" SortExpression="HID" 
+                 />
             <asp:BoundField DataField="PSW" HeaderText="密码" SortExpression="PSW" />
-            <asp:CheckBoxField DataField="LIM" HeaderText="管理员" SortExpression="LIM" />
-            <asp:CommandField CancelText="取消" DeleteText="删除" EditText="编辑" HeaderText="更新" 
-                InsertText="插入" ShowEditButton="True" UpdateText="更新" />
-            <asp:CommandField CancelText="取消" DeleteText="删除" EditText="编辑" HeaderText="删除" 
-                ShowDeleteButton="True" />
-            <asp:TemplateField HeaderText="插入">
+            <asp:CheckBoxField DataField="LIM" HeaderText="权限" SortExpression="LIM" />
+            <asp:CommandField CancelText="取消" DeleteText="删除" EditText="修改" HeaderText="修改" 
+                InsertText="插入" ShowEditButton="True" UpdateText="修改" />
+            <asp:TemplateField HeaderText="删除">
                 <ItemTemplate>
-                    <asp:DetailsView ID="DetailsView2" runat="server" Height="50px" Width="125px">
-                    </asp:DetailsView>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
+                        CommandName="Delete" onclientclick="return confirm('确认要删除吗？')">删除</asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
-        <EmptyDataTemplate>
-            <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px">
-            </asp:DetailsView>
-        </EmptyDataTemplate>
         <PagerSettings FirstPageText="第一页" LastPageText="最后一页" 
             Mode="NumericFirstLast" />
     </asp:GridView>
+    
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:HospitalData %>" 
-        SelectCommand="SELECT * FROM [OPERATOR]"></asp:SqlDataSource>
+         SelectCommand="SELECT * FROM [OPERATOR]" 
+         DeleteCommand="DELETE FROM OPERATOR WHERE HID = @HID" 
+         UpdateCommand="update operator set PSW=@PSW Where HID=@HID" 
+         >
+        <DeleteParameters>
+            <asp:Parameter Name="HID" Type="String"/>
+        </DeleteParameters>
+        <UpdateParameters>          
+            <asp:Parameter Name="PSW" Type="String"/>
+            <asp:Parameter Name="HID" Type="String" />
+        </UpdateParameters>
+        
+        </asp:SqlDataSource>
+       
+     <asp:Label runat="server" Text="添加用户名"></asp:Label>
+     <asp:TextBox ID="Taduser" runat="server"></asp:TextBox>
+     <br />
+      <asp:Label ID="Label2" runat="server" Text="添加密码"></asp:Label>
+     <asp:TextBox ID="Tadpsw" runat="server"></asp:TextBox>
+     
+     <asp:Button ID="Bcfirm" runat="server" Text="确认添加" onclick="Bcfirm_Click"/>
     <br />
 
-    </form>
 </asp:Content>

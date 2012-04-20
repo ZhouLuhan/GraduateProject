@@ -58,6 +58,7 @@
     <Content Include="App_Data\Hospital_log.ldf">
       <DependentUpon>Hospital.mdf</DependentUpon>
     </Content>
+    <Content Include="FindPatient.aspx" />
     <Content Include="NewPatient.aspx" />
     <Content Include="OperatorManager.aspx" />
     <Content Include="Styles\Site.css" />
@@ -104,6 +105,13 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FindPatient.aspx.cs">
+      <DependentUpon>FindPatient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindPatient.aspx.designer.cs">
+      <DependentUpon>FindPatient.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
