@@ -1,20 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewPatient.aspx.cs" Inherits="HospitalHelper.NewPatient" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="NewPatient.aspx.cs" Inherits="HospitalHelper.NewPatient" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID ="ContentPlaceHolder1" runat="server">
 
     <asp:Label ID="Lpname" runat="server" Text="姓名"></asp:Label>
 
     <asp:TextBox ID="Tpname" runat="server"></asp:TextBox>
-    &nbsp;<asp:Label ID="Lpmarriage" runat="server" Text="婚姻状况"></asp:Label>
+    &nbsp;<asp:Label ID="Lpmarriage" runat="server" Text="婚姻状况" ></asp:Label>
 
-    <asp:TextBox ID="Tpmarriage" runat="server"></asp:TextBox>
+    <asp:TextBox ID="Tpmarriage" runat="server" ></asp:TextBox>
 
     &nbsp;<asp:Label ID="Lpfolk" runat="server" Text="民族"></asp:Label>
 
@@ -187,10 +180,11 @@
     <asp:TextBox ID="Tpcomment" runat="server"></asp:TextBox>
     
     
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:SqlDataSource 
+        ID="SqlDataSource1" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:HospitalData %>" 
+        SelectCommand="SELECT * FROM [PATIENT]"></asp:SqlDataSource>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="Bsave" runat="server" Text="保存" onclick="Bsave_Click" />
     
-    
-    </form>
-</body>
-</html>
+    </asp:Content>

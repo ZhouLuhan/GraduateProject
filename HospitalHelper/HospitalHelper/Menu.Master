@@ -21,7 +21,7 @@
         <asp:TreeView ID="TreeView1" runat="server">
         <Nodes><asp:TreeNode Text="病人信息">
                     <asp:TreeNode Text="病人登记" NavigateUrl="~/NewPatient.aspx"/>
-                    <asp:TreeNode Text="病人查询"/>
+                    <asp:TreeNode Text="病人查询" NavigateUrl="~/FindPatient.aspx"/>
                </asp:TreeNode>
         </Nodes>
         </asp:TreeView>
