@@ -28,13 +28,21 @@ namespace HospitalHelper
 
             comm.ExecuteNonQuery();
             SqlDataReader reader = comm.ExecuteReader();
+
             if (reader.HasRows)
             {
+                Session["HID"] = Tuser.Text;
+                
                 reader.Read();
-                if (reader.GetString(1) == psw) Response.Redirect("OperatorManager.aspx");
+                if (reader.GetBoolean(2))
+                    Session["LIM"] = "true";
+                else Session["LIM"] = "false";
+
+                if (reader.GetString(1) == psw) Response.Redirect("FindPatient.aspx");
                 else Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "info", "alert('密码错误!')", true);
             }
             else Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "info", "alert('用户名错误!')", true);
+            conn.Close();
         }
     }
 }

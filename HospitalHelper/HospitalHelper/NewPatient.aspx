@@ -42,7 +42,7 @@
     <asp:TextBox ID="Tprelige" runat="server"></asp:TextBox>
 
     <br />
-    <asp:Label ID="Lpid" runat="server" Text="身份证号"></asp:Label>
+    <asp:Label ID="Lpid" runat="server" Text="身份证号"></asp:Label> 
 
     <asp:TextBox ID="Tpid" runat="server"></asp:TextBox>
 
@@ -183,8 +183,91 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:SqlDataSource 
         ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:HospitalData %>" 
-        SelectCommand="SELECT * FROM [PATIENT]"></asp:SqlDataSource>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        SelectCommand="SELECT * FROM [PATIENT]" 
+    DeleteCommand="DELETE FROM [PATIENT] WHERE [PID] = @PID" 
+    InsertCommand="INSERT INTO [PATIENT] ([PID], [PNAME], [PMARRIAGE], [PFOLK], [PNATION], [PBIRTHDAY], [PSEX], [PRELIGE], [PDEGREE], [PEDUCATION], [PBIRTHCITY], [PBIRTHDISTRICT], [PNATIVECITY], [PNATIVEDISTRICT], [PPROPERTY], [PFEETYPE], [PCARDNUM], [PJOB], [PWORKUNIT], [PWORKPLACE], [PWORKTEL], [PWORKPOST], [PRESIDENCEPLACE], [PHOMETEL], [PHOMECITY], [PHOMEDISTRICT], [PHOMEPLACE], [PCONNAME], [PCONRELATION], [PCONPLACE], [PCONTEL], [PCONPOST], [PCONWORKUNIT], [PCONHISTORYPEO], [PCOMMENT]) VALUES (@PID, @PNAME, @PMARRIAGE, @PFOLK, @PNATION, @PBIRTHDAY, @PSEX, @PRELIGE, @PDEGREE, @PEDUCATION, @PBIRTHCITY, @PBIRTHDISTRICT, @PNATIVECITY, @PNATIVEDISTRICT, @PPROPERTY, @PFEETYPE, @PCARDNUM, @PJOB, @PWORKUNIT, @PWORKPLACE, @PWORKTEL, @PWORKPOST, @PRESIDENCEPLACE, @PHOMETEL, @PHOMECITY, @PHOMEDISTRICT, @PHOMEPLACE, @PCONNAME, @PCONRELATION, @PCONPLACE, @PCONTEL, @PCONPOST, @PCONWORKUNIT, @PCONHISTORYPEO, @PCOMMENT)" 
+    UpdateCommand="UPDATE [PATIENT] SET [PNAME] = @PNAME, [PMARRIAGE] = @PMARRIAGE, [PFOLK] = @PFOLK, [PNATION] = @PNATION, [PBIRTHDAY] = @PBIRTHDAY, [PSEX] = @PSEX, [PRELIGE] = @PRELIGE, [PDEGREE] = @PDEGREE, [PEDUCATION] = @PEDUCATION, [PBIRTHCITY] = @PBIRTHCITY, [PBIRTHDISTRICT] = @PBIRTHDISTRICT, [PNATIVECITY] = @PNATIVECITY, [PNATIVEDISTRICT] = @PNATIVEDISTRICT, [PPROPERTY] = @PPROPERTY, [PFEETYPE] = @PFEETYPE, [PCARDNUM] = @PCARDNUM, [PJOB] = @PJOB, [PWORKUNIT] = @PWORKUNIT, [PWORKPLACE] = @PWORKPLACE, [PWORKTEL] = @PWORKTEL, [PWORKPOST] = @PWORKPOST, [PRESIDENCEPLACE] = @PRESIDENCEPLACE, [PHOMETEL] = @PHOMETEL, [PHOMECITY] = @PHOMECITY, [PHOMEDISTRICT] = @PHOMEDISTRICT, [PHOMEPLACE] = @PHOMEPLACE, [PCONNAME] = @PCONNAME, [PCONRELATION] = @PCONRELATION, [PCONPLACE] = @PCONPLACE, [PCONTEL] = @PCONTEL, [PCONPOST] = @PCONPOST, [PCONWORKUNIT] = @PCONWORKUNIT, [PCONHISTORYPEO] = @PCONHISTORYPEO, [PCOMMENT] = @PCOMMENT WHERE [PID] = @PID">
+    <DeleteParameters>
+        <asp:Parameter Name="PID" Type="String" />
+    </DeleteParameters>
+    <InsertParameters>
+        <asp:Parameter Name="PID" Type="String" />
+        <asp:Parameter Name="PNAME" Type="String" />
+        <asp:Parameter Name="PMARRIAGE" Type="String" />
+        <asp:Parameter Name="PFOLK" Type="String" />
+        <asp:Parameter Name="PNATION" Type="String" />
+        <asp:Parameter Name="PBIRTHDAY" Type="DateTime" />
+        <asp:Parameter Name="PSEX" Type="String" />
+        <asp:Parameter Name="PRELIGE" Type="String" />
+        <asp:Parameter Name="PDEGREE" Type="String" />
+        <asp:Parameter Name="PEDUCATION" Type="String" />
+        <asp:Parameter Name="PBIRTHCITY" Type="String" />
+        <asp:Parameter Name="PBIRTHDISTRICT" Type="String" />
+        <asp:Parameter Name="PNATIVECITY" Type="String" />
+        <asp:Parameter Name="PNATIVEDISTRICT" Type="String" />
+        <asp:Parameter Name="PPROPERTY" Type="String" />
+        <asp:Parameter Name="PFEETYPE" Type="String" />
+        <asp:Parameter Name="PCARDNUM" Type="String" />
+        <asp:Parameter Name="PJOB" Type="String" />
+        <asp:Parameter Name="PWORKUNIT" Type="String" />
+        <asp:Parameter Name="PWORKPLACE" Type="String" />
+        <asp:Parameter Name="PWORKTEL" Type="String" />
+        <asp:Parameter Name="PWORKPOST" Type="String" />
+        <asp:Parameter Name="PRESIDENCEPLACE" Type="String" />
+        <asp:Parameter Name="PHOMETEL" Type="String" />
+        <asp:Parameter Name="PHOMECITY" Type="String" />
+        <asp:Parameter Name="PHOMEDISTRICT" Type="String" />
+        <asp:Parameter Name="PHOMEPLACE" Type="String" />
+        <asp:Parameter Name="PCONNAME" Type="String" />
+        <asp:Parameter Name="PCONRELATION" Type="String" />
+        <asp:Parameter Name="PCONPLACE" Type="String" />
+        <asp:Parameter Name="PCONTEL" Type="String" />
+        <asp:Parameter Name="PCONPOST" Type="String" />
+        <asp:Parameter Name="PCONWORKUNIT" Type="String" />
+        <asp:Parameter Name="PCONHISTORYPEO" Type="String" />
+        <asp:Parameter Name="PCOMMENT" Type="String" />
+    </InsertParameters>
+    <UpdateParameters>
+        <asp:Parameter Name="PNAME" Type="String" />
+        <asp:Parameter Name="PMARRIAGE" Type="String" />
+        <asp:Parameter Name="PFOLK" Type="String" />
+        <asp:Parameter Name="PNATION" Type="String" />
+        <asp:Parameter Name="PBIRTHDAY" Type="DateTime" />
+        <asp:Parameter Name="PSEX" Type="String" />
+        <asp:Parameter Name="PRELIGE" Type="String" />
+        <asp:Parameter Name="PDEGREE" Type="String" />
+        <asp:Parameter Name="PEDUCATION" Type="String" />
+        <asp:Parameter Name="PBIRTHCITY" Type="String" />
+        <asp:Parameter Name="PBIRTHDISTRICT" Type="String" />
+        <asp:Parameter Name="PNATIVECITY" Type="String" />
+        <asp:Parameter Name="PNATIVEDISTRICT" Type="String" />
+        <asp:Parameter Name="PPROPERTY" Type="String" />
+        <asp:Parameter Name="PFEETYPE" Type="String" />
+        <asp:Parameter Name="PCARDNUM" Type="String" />
+        <asp:Parameter Name="PJOB" Type="String" />
+        <asp:Parameter Name="PWORKUNIT" Type="String" />
+        <asp:Parameter Name="PWORKPLACE" Type="String" />
+        <asp:Parameter Name="PWORKTEL" Type="String" />
+        <asp:Parameter Name="PWORKPOST" Type="String" />
+        <asp:Parameter Name="PRESIDENCEPLACE" Type="String" />
+        <asp:Parameter Name="PHOMETEL" Type="String" />
+        <asp:Parameter Name="PHOMECITY" Type="String" />
+        <asp:Parameter Name="PHOMEDISTRICT" Type="String" />
+        <asp:Parameter Name="PHOMEPLACE" Type="String" />
+        <asp:Parameter Name="PCONNAME" Type="String" />
+        <asp:Parameter Name="PCONRELATION" Type="String" />
+        <asp:Parameter Name="PCONPLACE" Type="String" />
+        <asp:Parameter Name="PCONTEL" Type="String" />
+        <asp:Parameter Name="PCONPOST" Type="String" />
+        <asp:Parameter Name="PCONWORKUNIT" Type="String" />
+        <asp:Parameter Name="PCONHISTORYPEO" Type="String" />
+        <asp:Parameter Name="PCOMMENT" Type="String" />
+        <asp:Parameter Name="PID" Type="String" />
+    </UpdateParameters>
+</asp:SqlDataSource>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button 
+        ID="Button1" runat="server" onclick="Button1_Click" Text="Button" />
+    &nbsp;&nbsp;
     <asp:Button ID="Bsave" runat="server" Text="保存" onclick="Bsave_Click" />
     
     </asp:Content>
