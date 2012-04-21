@@ -13,15 +13,20 @@ namespace QLaerningBlackService
     public class ChessAIService : IChessAIService
     {
         static string[] State; static string[] Strategy;
+        static string[] QState; static string[] QStrategy;
+
         double a = 0.2;//学习速率
         double u = 0.2;//折扣率
-        static int tcount;
+        static int tcount, qcount;
 
         public void GameStart()
         {
             State = new string[10000];
             Strategy = new string[10000];
+            QState = new string[10000];
+            QStrategy = new string[10000];
             tcount = 0;
+            qcount = 0;
         }
 
         double VPaiNextState(ChessState state, StrategyState strategy)
@@ -56,7 +61,11 @@ namespace QLaerningBlackService
             qs = qs + a * (r + u * DataOperation.SelectVState(mstate) - qs);
 
             //把得到的qs存入数据库
-            DataOperation.InsertQState(mstate, astrategy, qs);
+            //DataOperation.InsertQState(mstate, astrategy, qs);
+
+            //把得到的qs存入数组
+            QState[qcount] = mstate;
+            QStrategy[qcount++] = astrategy;
 
             return qs;
         }
@@ -156,7 +165,12 @@ namespace QLaerningBlackService
             string CurrStr = Stra[key];
 
             //把得到的qs存入数据库
-            // DataOperation.InsertQState(ChessState.StateToStr(state), CurrStr, CurrVs);
+            for (i = 0; i < qcount; i++)
+                DataOperation.InsertQState(QState[i], QStrategy[i], CurrVs);
+
+            QState = new string[10000];
+            QStrategy = new string[10000];
+            qcount = 0;
 
             //把状态和决策存入数组
             State[tcount] = ChessState.StateToStr(state);

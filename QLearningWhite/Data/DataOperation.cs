@@ -129,16 +129,18 @@ namespace Data
         {
             double value;
             WhiteQlearningDataContext whiteQlearning = new WhiteQlearningDataContext();
-            var tmp = from c in whiteQlearning.STATEs
-                      from e in whiteQlearning.ASTRATEGies
-                      from o in whiteQlearning.QSTATEs
-                      where c.SNO == o.SNO && e.ANO == o.ANO && c.MSTATE == state && e.STRATEGY == stra
-                      select o.VALUE;
+            int sno = whiteQlearning.STATEs.Where(p => p.MSTATE == state).Single().SNO;
+            int ano = whiteQlearning.ASTRATEGies.Where(p => p.STRATEGY == stra).Single().ANO;
+
+            var tmp = from c in whiteQlearning.QSTATEs
+                      where c.SNO == sno && c.ANO == ano
+                      select c.VALUE;
+
             if (tmp.Count() <= 0)
             {
                 QSTATE tmps = new QSTATE();
-                tmps.SNO = whiteQlearning.STATEs.Where(p => p.MSTATE == state).Single().SNO;
-                tmps.ANO = whiteQlearning.ASTRATEGies.Where(p => p.STRATEGY == stra).Single().ANO;
+                tmps.SNO = sno;
+                tmps.ANO = ano;
                 tmps.VALUE = 1.0;
                 whiteQlearning.QSTATEs.InsertOnSubmit(tmps);
                 whiteQlearning.SubmitChanges();
