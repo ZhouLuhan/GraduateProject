@@ -1,0 +1,17 @@
+The white AI "WhiteAITD(0) start compete with the black AI "BlackAITD0!
+
+The pracise is running and you cannot operate the application.
+Please wait for the end of the practise.
+Log file name: WhiteAITD(0)_vs._BlackAITD0_2012_4_22_16_23_55.txt
+Time: 2012/4/22 16:23:55
+
+----------------------------------------------
+
+White Level: 3003
+Black Level: 3003
+Winner: White
+Total Turns: 11
+Time: 2012/4/22 16:24:46
+
+----------------------------------------------
+
