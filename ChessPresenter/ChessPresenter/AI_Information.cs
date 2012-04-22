@@ -14,6 +14,7 @@ namespace ChessPresenter
         public string ServerName { get; set; }
         public string URL { get; set; }
         public AIType Type { get; set; }
+        public int Level { get; set; }
         public IChessAIService proxy;
 
         public Boolean GetLinked()

@@ -61,17 +61,19 @@ namespace ChessPresenter
                 return;
             }
             totNumber = practiseTime = int.Parse(textBox1.Text);
-            practiseFile = "Prc" + DateTime.Now.Year.ToString() + "_" + 
+            practiseFile = aiInfo[0].ServerName + "_vs._" + aiInfo[1].ServerName + "_"+ 
+                           DateTime.Now.Year.ToString() + "_" + 
                            DateTime.Now.Month.ToString() + "_" +
                            DateTime.Now.Day.ToString() + "_" + 
                            DateTime.Now.Hour.ToString() + "_" + 
                            DateTime.Now.Minute.ToString() + "_" +
                            DateTime.Now.Second.ToString() + ".txt";
+            logStr = "The white AI \"" + aiInfo[0].ServerName + " start compete with the black AI \"" + aiInfo[1].ServerName + "!\n\n";
             textBox2.Text = "The pracise is running and you cannot operate the application.\r\nPlease wait for the end of the practise.\r\n";
             textBox2.Text += "Log file name: " + practiseFile + "\r\n";
             textBox2.Text += "Time: " + DateTime.Now.ToString() + "\r\n";
             textBox2.Text += "\r\n----------------------------------------------\r\n\r\n";
-            logStr = textBox2.Text;
+            logStr += textBox2.Text;
             SetupTheTimer();
         }
 
@@ -100,6 +102,8 @@ namespace ChessPresenter
             sw.Write(logStr); sw.Flush(); sw.Close();
             fs.Close();
             MessageBox.Show(@"Practise end, the log will be saved at '~\PractiseLog\" + practiseFile + @"'." + "\n");
+            aiInfo[0].Level += totNumber;
+            aiInfo[1].Level += totNumber;
             this.Close();
         }
 
@@ -114,7 +118,8 @@ namespace ChessPresenter
                 string str = aiInfo[(int)gameState].proxy.GetStrategy(chessState, Convert.ToBoolean(1 - gameState));
                 MakeDecision(StrategyState.StrToSta(str));
             }
-            textBox2.Text = "Round: " + (totNumber - practiseTime).ToString() + "\r\n";
+            textBox2.Text = "White Level: " + (totNumber - practiseTime + aiInfo[0].Level).ToString() + "\r\n";
+            textBox2.Text += "Black Level: " + (totNumber - practiseTime + aiInfo[1].Level).ToString() + "\r\n";
             textBox2.Text += "Winner: ";
             if (resultState == WinnerType.WhiteWin) textBox2.Text += "White\r\n"; else textBox2.Text += "Black\r\n";
             textBox2.Text += "Total Turns: " + turnNumber.ToString() + "\r\n";

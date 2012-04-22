@@ -32,6 +32,11 @@ namespace ChessPresenter
             AIReload();
         }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            AIUpload();
+        }
+
         private AI_Information AI_Construct(ComboBox comboBox)
         {
             if (comboBox.SelectedItem != null)
@@ -69,7 +74,26 @@ namespace ChessPresenter
             ele = doc.CreateElement("Type");
             ele.InnerText = info.Type.ToString();
             ep.AppendChild(ele);
+            ele = doc.CreateElement("Level");
+            ele.InnerText = info.Level.ToString();
+            ep.AppendChild(ele);
             root.AppendChild(ep);
+            doc.Save("AIConfig.xml");
+        }
+
+        private void AIUpload()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("AIConfig.xml");
+            XmlNodeList eps = doc.SelectSingleNode("Root").ChildNodes;
+            foreach (XmlNode ep in eps)
+            {
+                if (blacks.ContainsKey(ep["ServerName"].InnerText))
+                    ep["Level"].InnerText = blacks[ep["ServerName"].InnerText].Level.ToString();
+                else if (whites.ContainsKey(ep["ServerName"].InnerText))
+                    ep["Level"].InnerText = whites[ep["ServerName"].InnerText].Level.ToString();
+                else ep["Level"].InnerText = eithers[ep["ServerName"].InnerText].Level.ToString();
+            }
             doc.Save("AIConfig.xml");
         }
 
@@ -98,6 +122,8 @@ namespace ChessPresenter
                     if (info.Type != AIType.Black) whites.Add(info.ServerName, info);
                     if (info.Type != AIType.White) blacks.Add(info.ServerName, info);
                 }
+                ele = ep.SelectSingleNode("Level");
+                info.Level = int.Parse(ele.InnerText);
             }
             WhiteComboBox.Items.Clear();
             foreach (string info in whites.Keys)
@@ -163,5 +189,6 @@ namespace ChessPresenter
             PractiseWindow practise = new PractiseWindow(this, ai_a, ai_b);
             practise.Show(); this.Hide();
         }
+
     }
 }

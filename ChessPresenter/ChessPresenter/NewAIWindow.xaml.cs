@@ -36,6 +36,15 @@ namespace ChessPresenter
             info.ServerName = textBox1.Text;
             info.URL = textBox2.Text;
             info.Type = (AIType)(comboBox1.SelectedIndex);
+            try
+            {
+                info.Level = int.Parse(Level.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Level内容只能为数字");
+                return;
+            }
             this.DialogResult = true;
         }
 
