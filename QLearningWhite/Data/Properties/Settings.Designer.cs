@@ -33,5 +33,16 @@ namespace Data.Properties {
                 return ((string)(this["AI_Qlearning_White_1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Krwlng-THINK;Initial Catalog=AI_Qlearning_White_1;Integrated Security" +
+            "=True")]
+        public string AI_Qlearning_White_1ConnectionString1 {
+            get {
+                return ((string)(this["AI_Qlearning_White_1ConnectionString1"]));
+            }
+        }
     }
 }

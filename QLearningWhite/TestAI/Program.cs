@@ -12,16 +12,12 @@ namespace TestAI
     {
         static void Main(string[] args)
         {
-            EndpointAddress ep = new EndpointAddress("http://localhost:8010/QLearningWhite/");
-            IChessAIService proxy = ChannelFactory<IChessAIService>.CreateChannel(new BasicHttpBinding(), ep);
-            ChessLaw.ChessState state = new ChessLaw.ChessState();
+            ChessAIService chess = new ChessAIService();
+            ChessState state = new ChessState();
             state.SetupNewGame();
-            proxy.GameStart();
-            string str = proxy.GetStrategy(state, true);
+            chess.GameStart();
+            string str = chess.GetStrategy(state, true);
             Console.WriteLine(str);
-    
-            proxy.UpdateResult(true);
-            Console.ReadLine();
         }
     }
 }
