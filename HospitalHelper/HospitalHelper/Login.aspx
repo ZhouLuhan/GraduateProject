@@ -12,10 +12,15 @@
 
 <asp:TextBox ID="Tuser" runat="server" Height="22px"></asp:TextBox>
 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-    ControlToValidate="Tuser" ErrorMessage="不能为空"></asp:RequiredFieldValidator>
+    ControlToValidate="Tuser" ErrorMessage="用户名不能为空"></asp:RequiredFieldValidator>
+<%--<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+    ControlToValidate="Tuser" ErrorMessage="只能输入数字且不超过10位" 
+    ValidationExpression="^\d{1,10}"></asp:RegularExpressionValidator>--%>
 <br />
 <asp:Label ID="Lpsw" runat="server" Text="密码 ："></asp:Label>&nbsp;&nbsp;
 <asp:TextBox ID="Tpsw" runat="server"></asp:TextBox>
+<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+    ControlToValidate="Tpsw" ErrorMessage="密码不能为空"></asp:RequiredFieldValidator>
 <br />
 
 <br />

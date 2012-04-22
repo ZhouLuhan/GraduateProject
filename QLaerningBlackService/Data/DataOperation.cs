@@ -128,16 +128,18 @@ namespace Data
         {
             double value;
             BlackQlearningDataContext blackQlearning = new BlackQlearningDataContext();
-            var tmp = from c in blackQlearning.STATEs
-                      from e in blackQlearning.ASTRATEGies
-                      from o in blackQlearning.QSTATEs
-                      where c.SNO == o.SNO && e.ANO == o.ANO && c.MSTATE == state && e.STRATEGY == stra
-                      select o.VALUE;
+            int sno = blackQlearning.STATEs.Where(p => p.MSTATE == state).Single().SNO;
+            int ano = blackQlearning.ASTRATEGies.Where(p => p.STRATEGY == stra).Single().ANO;
+
+            var tmp = from c in blackQlearning.QSTATEs
+                      where c.SNO == sno && c.ANO == ano
+                      select c.VALUE;
+
             if (tmp.Count() <= 0)
             {
                 QSTATE tmps = new QSTATE();
-                tmps.SNO = blackQlearning.STATEs.Where(p => p.MSTATE == state).Single().SNO;
-                tmps.ANO = blackQlearning.ASTRATEGies.Where(p => p.STRATEGY == stra).Single().ANO;
+                tmps.SNO = sno;
+                tmps.ANO = ano;
                 tmps.VALUE = 1.0;
                 blackQlearning.QSTATEs.InsertOnSubmit(tmps);
                 blackQlearning.SubmitChanges();

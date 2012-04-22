@@ -26,14 +26,22 @@ CodeBehind="OperatorManager.aspx.cs" Inherits="HospitalHelper.OperatorManager" %
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:HospitalData %>" 
          SelectCommand="SELECT * FROM [OPERATOR]" 
-         DeleteCommand="DELETE FROM OPERATOR WHERE HID = @HID" 
-         UpdateCommand="update operator set PSW=@PSW Where HID=@HID" 
+         DeleteCommand="DELETE FROM [OPERATOR] WHERE [HID] = @HID" 
+         
+         UpdateCommand="UPDATE [OPERATOR] SET [PSW] = @PSW, [LIM] = @LIM WHERE [HID] = @HID" 
+         InsertCommand="INSERT INTO [OPERATOR] ([HID], [PSW], [LIM]) VALUES (@HID, @PSW, @LIM)" 
          >
         <DeleteParameters>
-            <asp:Parameter Name="HID" Type="String"/>
+            <asp:Parameter Name="HID" Type="String" />
         </DeleteParameters>
-        <UpdateParameters>          
-            <asp:Parameter Name="PSW" Type="String"/>
+        <InsertParameters>
+            <asp:Parameter Name="HID" Type="String" />
+            <asp:Parameter Name="PSW" Type="String" />
+            <asp:Parameter Name="LIM" Type="Boolean" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="PSW" Type="String" />
+            <asp:Parameter Name="LIM" Type="Boolean" />
             <asp:Parameter Name="HID" Type="String" />
         </UpdateParameters>
         
