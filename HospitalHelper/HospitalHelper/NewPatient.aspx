@@ -27,9 +27,9 @@
 
     <asp:TextBox ID="Tpbirthtime" runat="server" Width="75px"></asp:TextBox>
 &nbsp;
-    <asp:Label ID="Lold" runat="server" Text="年龄"></asp:Label>
+    <asp:Label ID="Lpold" runat="server" Text="年龄"></asp:Label>
 
-    <asp:TextBox ID="Told" runat="server" Width="81px"></asp:TextBox>
+    <asp:TextBox ID="Tpold" runat="server" Width="81px"></asp:TextBox>
 &nbsp;
 
     <asp:Label ID="Lsex" runat="server" Text="性别"></asp:Label>

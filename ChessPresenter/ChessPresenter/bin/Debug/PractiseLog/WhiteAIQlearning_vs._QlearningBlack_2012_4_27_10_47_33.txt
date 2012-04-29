@@ -1,0 +1,17 @@
+The white AI "WhiteAIQlearning start compete with the black AI "QlearningBlack!
+
+The pracise is running and you cannot operate the application.
+Please wait for the end of the practise.
+Log file name: WhiteAIQlearning_vs._QlearningBlack_2012_4_27_10_47_33.txt
+Time: 2012/4/27 10:47:33
+
+----------------------------------------------
+
+White Level: 1001
+Black Level: 1001
+Winner: Black
+Total Turns: 26
+Time: 2012/4/27 10:49:07
+
+----------------------------------------------
+

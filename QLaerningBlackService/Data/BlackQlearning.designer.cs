@@ -33,19 +33,19 @@ namespace Data
     partial void InsertASTRATEGY(ASTRATEGY instance);
     partial void UpdateASTRATEGY(ASTRATEGY instance);
     partial void DeleteASTRATEGY(ASTRATEGY instance);
+    partial void InsertVREWARD(VREWARD instance);
+    partial void UpdateVREWARD(VREWARD instance);
+    partial void DeleteVREWARD(VREWARD instance);
     partial void InsertQSTATE(QSTATE instance);
     partial void UpdateQSTATE(QSTATE instance);
     partial void DeleteQSTATE(QSTATE instance);
     partial void InsertSTATE(STATE instance);
     partial void UpdateSTATE(STATE instance);
     partial void DeleteSTATE(STATE instance);
-    partial void InsertVREWARD(VREWARD instance);
-    partial void UpdateVREWARD(VREWARD instance);
-    partial void DeleteVREWARD(VREWARD instance);
     #endregion
 		
 		public BlackQlearningDataContext() : 
-				base(global::Data.Properties.Settings.Default.AI_Qlearning_Black_1ConnectionString, mappingSource)
+				base(global::Data.Properties.Settings.Default.AI_Qlearning_Black_1ConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -82,6 +82,14 @@ namespace Data
 			}
 		}
 		
+		public System.Data.Linq.Table<VREWARD> VREWARDs
+		{
+			get
+			{
+				return this.GetTable<VREWARD>();
+			}
+		}
+		
 		public System.Data.Linq.Table<QSTATE> QSTATEs
 		{
 			get
@@ -97,14 +105,6 @@ namespace Data
 				return this.GetTable<STATE>();
 			}
 		}
-		
-		public System.Data.Linq.Table<VREWARD> VREWARDs
-		{
-			get
-			{
-				return this.GetTable<VREWARD>();
-			}
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ASTRATEGY")]
@@ -117,9 +117,9 @@ namespace Data
 		
 		private string _STRATEGY;
 		
-		private EntitySet<QSTATE> _QSTATEs;
-		
 		private EntitySet<VREWARD> _VREWARDs;
+		
+		private EntitySet<QSTATE> _QSTATEs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -133,8 +133,8 @@ namespace Data
 		
 		public ASTRATEGY()
 		{
-			this._QSTATEs = new EntitySet<QSTATE>(new Action<QSTATE>(this.attach_QSTATEs), new Action<QSTATE>(this.detach_QSTATEs));
 			this._VREWARDs = new EntitySet<VREWARD>(new Action<VREWARD>(this.attach_VREWARDs), new Action<VREWARD>(this.detach_VREWARDs));
+			this._QSTATEs = new EntitySet<QSTATE>(new Action<QSTATE>(this.attach_QSTATEs), new Action<QSTATE>(this.detach_QSTATEs));
 			OnCreated();
 		}
 		
@@ -178,19 +178,6 @@ namespace Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ASTRATEGY_QSTATE", Storage="_QSTATEs", ThisKey="ANO", OtherKey="ANO")]
-		public EntitySet<QSTATE> QSTATEs
-		{
-			get
-			{
-				return this._QSTATEs;
-			}
-			set
-			{
-				this._QSTATEs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ASTRATEGY_VREWARD", Storage="_VREWARDs", ThisKey="ANO", OtherKey="ANO")]
 		public EntitySet<VREWARD> VREWARDs
 		{
@@ -204,315 +191,7 @@ namespace Data
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_QSTATEs(QSTATE entity)
-		{
-			this.SendPropertyChanging();
-			entity.ASTRATEGY = this;
-		}
-		
-		private void detach_QSTATEs(QSTATE entity)
-		{
-			this.SendPropertyChanging();
-			entity.ASTRATEGY = null;
-		}
-		
-		private void attach_VREWARDs(VREWARD entity)
-		{
-			this.SendPropertyChanging();
-			entity.ASTRATEGY = this;
-		}
-		
-		private void detach_VREWARDs(VREWARD entity)
-		{
-			this.SendPropertyChanging();
-			entity.ASTRATEGY = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.QSTATE")]
-	public partial class QSTATE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _SNO;
-		
-		private int _ANO;
-		
-		private double _VALUE;
-		
-		private EntityRef<ASTRATEGY> _ASTRATEGY;
-		
-		private EntityRef<STATE> _STATE;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSNOChanging(int value);
-    partial void OnSNOChanged();
-    partial void OnANOChanging(int value);
-    partial void OnANOChanged();
-    partial void OnVALUEChanging(double value);
-    partial void OnVALUEChanged();
-    #endregion
-		
-		public QSTATE()
-		{
-			this._ASTRATEGY = default(EntityRef<ASTRATEGY>);
-			this._STATE = default(EntityRef<STATE>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SNO", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int SNO
-		{
-			get
-			{
-				return this._SNO;
-			}
-			set
-			{
-				if ((this._SNO != value))
-				{
-					if (this._STATE.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSNOChanging(value);
-					this.SendPropertyChanging();
-					this._SNO = value;
-					this.SendPropertyChanged("SNO");
-					this.OnSNOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANO", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ANO
-		{
-			get
-			{
-				return this._ANO;
-			}
-			set
-			{
-				if ((this._ANO != value))
-				{
-					if (this._ASTRATEGY.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnANOChanging(value);
-					this.SendPropertyChanging();
-					this._ANO = value;
-					this.SendPropertyChanged("ANO");
-					this.OnANOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALUE", DbType="Float NOT NULL")]
-		public double VALUE
-		{
-			get
-			{
-				return this._VALUE;
-			}
-			set
-			{
-				if ((this._VALUE != value))
-				{
-					this.OnVALUEChanging(value);
-					this.SendPropertyChanging();
-					this._VALUE = value;
-					this.SendPropertyChanged("VALUE");
-					this.OnVALUEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ASTRATEGY_QSTATE", Storage="_ASTRATEGY", ThisKey="ANO", OtherKey="ANO", IsForeignKey=true)]
-		public ASTRATEGY ASTRATEGY
-		{
-			get
-			{
-				return this._ASTRATEGY.Entity;
-			}
-			set
-			{
-				ASTRATEGY previousValue = this._ASTRATEGY.Entity;
-				if (((previousValue != value) 
-							|| (this._ASTRATEGY.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ASTRATEGY.Entity = null;
-						previousValue.QSTATEs.Remove(this);
-					}
-					this._ASTRATEGY.Entity = value;
-					if ((value != null))
-					{
-						value.QSTATEs.Add(this);
-						this._ANO = value.ANO;
-					}
-					else
-					{
-						this._ANO = default(int);
-					}
-					this.SendPropertyChanged("ASTRATEGY");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_QSTATE", Storage="_STATE", ThisKey="SNO", OtherKey="SNO", IsForeignKey=true)]
-		public STATE STATE
-		{
-			get
-			{
-				return this._STATE.Entity;
-			}
-			set
-			{
-				STATE previousValue = this._STATE.Entity;
-				if (((previousValue != value) 
-							|| (this._STATE.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._STATE.Entity = null;
-						previousValue.QSTATEs.Remove(this);
-					}
-					this._STATE.Entity = value;
-					if ((value != null))
-					{
-						value.QSTATEs.Add(this);
-						this._SNO = value.SNO;
-					}
-					else
-					{
-						this._SNO = default(int);
-					}
-					this.SendPropertyChanged("STATE");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.STATE")]
-	public partial class STATE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _SNO;
-		
-		private string _MSTATE;
-		
-		private EntitySet<QSTATE> _QSTATEs;
-		
-		private EntitySet<VREWARD> _VREWARDs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSNOChanging(int value);
-    partial void OnSNOChanged();
-    partial void OnMSTATEChanging(string value);
-    partial void OnMSTATEChanged();
-    #endregion
-		
-		public STATE()
-		{
-			this._QSTATEs = new EntitySet<QSTATE>(new Action<QSTATE>(this.attach_QSTATEs), new Action<QSTATE>(this.detach_QSTATEs));
-			this._VREWARDs = new EntitySet<VREWARD>(new Action<VREWARD>(this.attach_VREWARDs), new Action<VREWARD>(this.detach_VREWARDs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SNO", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int SNO
-		{
-			get
-			{
-				return this._SNO;
-			}
-			set
-			{
-				if ((this._SNO != value))
-				{
-					this.OnSNOChanging(value);
-					this.SendPropertyChanging();
-					this._SNO = value;
-					this.SendPropertyChanged("SNO");
-					this.OnSNOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSTATE", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string MSTATE
-		{
-			get
-			{
-				return this._MSTATE;
-			}
-			set
-			{
-				if ((this._MSTATE != value))
-				{
-					this.OnMSTATEChanging(value);
-					this.SendPropertyChanging();
-					this._MSTATE = value;
-					this.SendPropertyChanged("MSTATE");
-					this.OnMSTATEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_QSTATE", Storage="_QSTATEs", ThisKey="SNO", OtherKey="SNO")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ASTRATEGY_QSTATE", Storage="_QSTATEs", ThisKey="ANO", OtherKey="ANO")]
 		public EntitySet<QSTATE> QSTATEs
 		{
 			get
@@ -525,19 +204,6 @@ namespace Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_VREWARD", Storage="_VREWARDs", ThisKey="SNO", OtherKey="SNO")]
-		public EntitySet<VREWARD> VREWARDs
-		{
-			get
-			{
-				return this._VREWARDs;
-			}
-			set
-			{
-				this._VREWARDs.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -558,28 +224,28 @@ namespace Data
 			}
 		}
 		
-		private void attach_QSTATEs(QSTATE entity)
-		{
-			this.SendPropertyChanging();
-			entity.STATE = this;
-		}
-		
-		private void detach_QSTATEs(QSTATE entity)
-		{
-			this.SendPropertyChanging();
-			entity.STATE = null;
-		}
-		
 		private void attach_VREWARDs(VREWARD entity)
 		{
 			this.SendPropertyChanging();
-			entity.STATE = this;
+			entity.ASTRATEGY = this;
 		}
 		
 		private void detach_VREWARDs(VREWARD entity)
 		{
 			this.SendPropertyChanging();
-			entity.STATE = null;
+			entity.ASTRATEGY = null;
+		}
+		
+		private void attach_QSTATEs(QSTATE entity)
+		{
+			this.SendPropertyChanging();
+			entity.ASTRATEGY = this;
+		}
+		
+		private void detach_QSTATEs(QSTATE entity)
+		{
+			this.SendPropertyChanging();
+			entity.ASTRATEGY = null;
 		}
 	}
 	
@@ -820,6 +486,340 @@ namespace Data
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.QSTATE")]
+	public partial class QSTATE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _SNO;
+		
+		private int _ANO;
+		
+		private double _VALUE;
+		
+		private EntityRef<ASTRATEGY> _ASTRATEGY;
+		
+		private EntityRef<STATE> _STATE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSNOChanging(int value);
+    partial void OnSNOChanged();
+    partial void OnANOChanging(int value);
+    partial void OnANOChanged();
+    partial void OnVALUEChanging(double value);
+    partial void OnVALUEChanged();
+    #endregion
+		
+		public QSTATE()
+		{
+			this._ASTRATEGY = default(EntityRef<ASTRATEGY>);
+			this._STATE = default(EntityRef<STATE>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SNO", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int SNO
+		{
+			get
+			{
+				return this._SNO;
+			}
+			set
+			{
+				if ((this._SNO != value))
+				{
+					if (this._STATE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSNOChanging(value);
+					this.SendPropertyChanging();
+					this._SNO = value;
+					this.SendPropertyChanged("SNO");
+					this.OnSNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANO", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ANO
+		{
+			get
+			{
+				return this._ANO;
+			}
+			set
+			{
+				if ((this._ANO != value))
+				{
+					if (this._ASTRATEGY.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnANOChanging(value);
+					this.SendPropertyChanging();
+					this._ANO = value;
+					this.SendPropertyChanged("ANO");
+					this.OnANOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VALUE", DbType="Float NOT NULL")]
+		public double VALUE
+		{
+			get
+			{
+				return this._VALUE;
+			}
+			set
+			{
+				if ((this._VALUE != value))
+				{
+					this.OnVALUEChanging(value);
+					this.SendPropertyChanging();
+					this._VALUE = value;
+					this.SendPropertyChanged("VALUE");
+					this.OnVALUEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ASTRATEGY_QSTATE", Storage="_ASTRATEGY", ThisKey="ANO", OtherKey="ANO", IsForeignKey=true)]
+		public ASTRATEGY ASTRATEGY
+		{
+			get
+			{
+				return this._ASTRATEGY.Entity;
+			}
+			set
+			{
+				ASTRATEGY previousValue = this._ASTRATEGY.Entity;
+				if (((previousValue != value) 
+							|| (this._ASTRATEGY.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ASTRATEGY.Entity = null;
+						previousValue.QSTATEs.Remove(this);
+					}
+					this._ASTRATEGY.Entity = value;
+					if ((value != null))
+					{
+						value.QSTATEs.Add(this);
+						this._ANO = value.ANO;
+					}
+					else
+					{
+						this._ANO = default(int);
+					}
+					this.SendPropertyChanged("ASTRATEGY");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_QSTATE", Storage="_STATE", ThisKey="SNO", OtherKey="SNO", IsForeignKey=true)]
+		public STATE STATE
+		{
+			get
+			{
+				return this._STATE.Entity;
+			}
+			set
+			{
+				STATE previousValue = this._STATE.Entity;
+				if (((previousValue != value) 
+							|| (this._STATE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._STATE.Entity = null;
+						previousValue.QSTATEs.Remove(this);
+					}
+					this._STATE.Entity = value;
+					if ((value != null))
+					{
+						value.QSTATEs.Add(this);
+						this._SNO = value.SNO;
+					}
+					else
+					{
+						this._SNO = default(int);
+					}
+					this.SendPropertyChanged("STATE");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.STATE")]
+	public partial class STATE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _SNO;
+		
+		private string _MSTATE;
+		
+		private EntitySet<VREWARD> _VREWARDs;
+		
+		private EntitySet<QSTATE> _QSTATEs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSNOChanging(int value);
+    partial void OnSNOChanged();
+    partial void OnMSTATEChanging(string value);
+    partial void OnMSTATEChanged();
+    #endregion
+		
+		public STATE()
+		{
+			this._VREWARDs = new EntitySet<VREWARD>(new Action<VREWARD>(this.attach_VREWARDs), new Action<VREWARD>(this.detach_VREWARDs));
+			this._QSTATEs = new EntitySet<QSTATE>(new Action<QSTATE>(this.attach_QSTATEs), new Action<QSTATE>(this.detach_QSTATEs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SNO", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int SNO
+		{
+			get
+			{
+				return this._SNO;
+			}
+			set
+			{
+				if ((this._SNO != value))
+				{
+					this.OnSNOChanging(value);
+					this.SendPropertyChanging();
+					this._SNO = value;
+					this.SendPropertyChanged("SNO");
+					this.OnSNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSTATE", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string MSTATE
+		{
+			get
+			{
+				return this._MSTATE;
+			}
+			set
+			{
+				if ((this._MSTATE != value))
+				{
+					this.OnMSTATEChanging(value);
+					this.SendPropertyChanging();
+					this._MSTATE = value;
+					this.SendPropertyChanged("MSTATE");
+					this.OnMSTATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_VREWARD", Storage="_VREWARDs", ThisKey="SNO", OtherKey="SNO")]
+		public EntitySet<VREWARD> VREWARDs
+		{
+			get
+			{
+				return this._VREWARDs;
+			}
+			set
+			{
+				this._VREWARDs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STATE_QSTATE", Storage="_QSTATEs", ThisKey="SNO", OtherKey="SNO")]
+		public EntitySet<QSTATE> QSTATEs
+		{
+			get
+			{
+				return this._QSTATEs;
+			}
+			set
+			{
+				this._QSTATEs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_VREWARDs(VREWARD entity)
+		{
+			this.SendPropertyChanging();
+			entity.STATE = this;
+		}
+		
+		private void detach_VREWARDs(VREWARD entity)
+		{
+			this.SendPropertyChanging();
+			entity.STATE = null;
+		}
+		
+		private void attach_QSTATEs(QSTATE entity)
+		{
+			this.SendPropertyChanging();
+			entity.STATE = this;
+		}
+		
+		private void detach_QSTATEs(QSTATE entity)
+		{
+			this.SendPropertyChanging();
+			entity.STATE = null;
 		}
 	}
 }

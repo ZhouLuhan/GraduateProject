@@ -2,56 +2,56 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="WhiteQlearning">
   <DataContextMoniker Name="/WhiteQlearningDataContext" />
   <nestedChildShapes>
-    <classShape Id="a3b873b1-3b25-4bee-9951-038d775677b3" absoluteBounds="0.75, 6.875, 2, 1.1895064290364594">
+    <classShape Id="e0edd377-0e9c-4714-a4cf-7b911ed8222b" absoluteBounds="0.75, 6.875, 2, 1.1895064290364594">
       <DataClassMoniker Name="/WhiteQlearningDataContext/ASTRATEGY" />
       <nestedChildShapes>
-        <elementListCompartment Id="29a3c2b0-fbbc-4072-bce4-063f443f7828" absoluteBounds="0.765, 7.335, 1.9700000000000002, 0.62950642903645826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a7fd829d-5b66-4662-b8a1-6e263e272fa3" absoluteBounds="0.765, 7.335, 1.9700000000000002, 0.62950642903645826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8e4c62f2-5440-4622-bc48-c3d14c6b1286" absoluteBounds="3.5, 0.75, 2, 1.7625655110677081">
+    <classShape Id="b99ffd0b-e4e7-46ca-8193-fe13c8b5ef30" absoluteBounds="3.5, 0.75, 2, 1.7625655110677081">
       <DataClassMoniker Name="/WhiteQlearningDataContext/VREWARD" />
       <nestedChildShapes>
-        <elementListCompartment Id="29a380b1-7e99-431c-b63d-937249c3623b" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7e55548e-f9a4-4039-9679-713a438c706f" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3cb15af5-d06e-4750-944c-fcc56dc32332" absoluteBounds="3.5, 4, 2, 1.3805261230468746">
+    <classShape Id="43c37b13-22a2-4f83-a123-afb75bc4ab93" absoluteBounds="3.5, 4, 2, 1.3805261230468746">
       <DataClassMoniker Name="/WhiteQlearningDataContext/QSTATE" />
       <nestedChildShapes>
-        <elementListCompartment Id="7cfbfff0-5585-4aec-a7ba-3598591f55ad" absoluteBounds="3.515, 4.46, 1.9700000000000002, 0.820526123046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="241df5c3-97f2-47c1-999c-9ab1e918b811" absoluteBounds="3.515, 4.46, 1.9700000000000002, 0.820526123046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d8196c31-320c-4837-bf0a-16c87e31920b" absoluteBounds="0.75, 4, 2, 1.1895064290364585">
+    <classShape Id="f48cc518-4b92-4bc6-81f8-1f6aa4c55f91" absoluteBounds="0.75, 4, 2, 1.1895064290364585">
       <DataClassMoniker Name="/WhiteQlearningDataContext/STATE" />
       <nestedChildShapes>
-        <elementListCompartment Id="54b0e01c-0c90-4dbf-ac19-c1b4864196a6" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.62950642903645826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9eafffac-da53-4ccc-b638-44d26da1425f" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.62950642903645826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(2.75 : 6.875); (3.125 : 6.5); (3.125 : 1.63128275553385); (3.5 : 1.63128275553385)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/WhiteQlearningDataContext/ASTRATEGY/ASTRATEGY_VREWARD" />
       <nodes>
-        <classShapeMoniker Id="a3b873b1-3b25-4bee-9951-038d775677b3" />
-        <classShapeMoniker Id="8e4c62f2-5440-4622-bc48-c3d14c6b1286" />
+        <classShapeMoniker Id="e0edd377-0e9c-4714-a4cf-7b911ed8222b" />
+        <classShapeMoniker Id="b99ffd0b-e4e7-46ca-8193-fe13c8b5ef30" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 7.50100571451823); (4.5 : 7.50100571451823); (4.5 : 5.38052612304687)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/WhiteQlearningDataContext/ASTRATEGY/ASTRATEGY_QSTATE" />
       <nodes>
-        <classShapeMoniker Id="a3b873b1-3b25-4bee-9951-038d775677b3" />
-        <classShapeMoniker Id="3cb15af5-d06e-4750-944c-fcc56dc32332" />
+        <classShapeMoniker Id="e0edd377-0e9c-4714-a4cf-7b911ed8222b" />
+        <classShapeMoniker Id="43c37b13-22a2-4f83-a123-afb75bc4ab93" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(1.75 : 4); (1.75 : 2.10317663330078); (3.04166666666667 : 2.10317663330078 : JumpStart); (3.20833333333333 : 2.10317663330078 : JumpEnd); (3.5 : 2.10317663330078)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/WhiteQlearningDataContext/STATE/STATE_VREWARD" />
       <nodes>
-        <classShapeMoniker Id="d8196c31-320c-4837-bf0a-16c87e31920b" />
-        <classShapeMoniker Id="8e4c62f2-5440-4622-bc48-c3d14c6b1286" />
+        <classShapeMoniker Id="f48cc518-4b92-4bc6-81f8-1f6aa4c55f91" />
+        <classShapeMoniker Id="b99ffd0b-e4e7-46ca-8193-fe13c8b5ef30" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 4.59475321451823); (3.04166666666667 : 4.59475321451823 : JumpStart); (3.20833333333333 : 4.59475321451823 : JumpEnd); (3.5 : 4.59475321451823)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/WhiteQlearningDataContext/STATE/STATE_QSTATE" />
       <nodes>
-        <classShapeMoniker Id="d8196c31-320c-4837-bf0a-16c87e31920b" />
-        <classShapeMoniker Id="3cb15af5-d06e-4750-944c-fcc56dc32332" />
+        <classShapeMoniker Id="f48cc518-4b92-4bc6-81f8-1f6aa4c55f91" />
+        <classShapeMoniker Id="43c37b13-22a2-4f83-a123-afb75bc4ab93" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

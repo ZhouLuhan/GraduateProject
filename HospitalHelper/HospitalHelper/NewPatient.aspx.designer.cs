@@ -112,22 +112,22 @@ namespace HospitalHelper {
         protected global::System.Web.UI.WebControls.TextBox Tpbirthtime;
         
         /// <summary>
-        /// Lold control.
+        /// Lpold control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lold;
+        protected global::System.Web.UI.WebControls.Label Lpold;
         
         /// <summary>
-        /// Told control.
+        /// Tpold control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Told;
+        protected global::System.Web.UI.WebControls.TextBox Tpold;
         
         /// <summary>
         /// Lsex control.
