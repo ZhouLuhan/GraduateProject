@@ -1,0 +1,409 @@
+The white AI "WhiteAITD(0) start compete with the black AI "BlackAITD0!
+
+The pracise is running and you cannot operate the application.
+Please wait for the end of the practise.
+Log file name: WhiteAITD(0)_vs._BlackAITD0_2012_5_3_12_16_0.txt
+Time: 2012/5/3 12:16:00
+
+----------------------------------------------
+
+White Level: 3004
+Black Level: 3004
+Winner: White
+Total Turns: 29
+Time: 2012/5/3 12:17:55
+
+----------------------------------------------
+
+White Level: 3005
+Black Level: 3005
+Winner: Black
+Total Turns: 40
+Time: 2012/5/3 12:19:39
+
+----------------------------------------------
+
+White Level: 3006
+Black Level: 3006
+Winner: Black
+Total Turns: 14
+Time: 2012/5/3 12:20:24
+
+----------------------------------------------
+
+White Level: 3007
+Black Level: 3007
+Winner: White
+Total Turns: 35
+Time: 2012/5/3 12:22:07
+
+----------------------------------------------
+
+White Level: 3008
+Black Level: 3008
+Winner: White
+Total Turns: 25
+Time: 2012/5/3 12:23:14
+
+----------------------------------------------
+
+White Level: 3009
+Black Level: 3009
+Winner: White
+Total Turns: 55
+Time: 2012/5/3 12:26:04
+
+----------------------------------------------
+
+White Level: 3010
+Black Level: 3010
+Winner: Black
+Total Turns: 48
+Time: 2012/5/3 12:28:23
+
+----------------------------------------------
+
+White Level: 3011
+Black Level: 3011
+Winner: Black
+Total Turns: 66
+Time: 2012/5/3 12:31:35
+
+----------------------------------------------
+
+White Level: 3012
+Black Level: 3012
+Winner: Black
+Total Turns: 10
+Time: 2012/5/3 12:32:10
+
+----------------------------------------------
+
+White Level: 3013
+Black Level: 3013
+Winner: Black
+Total Turns: 36
+Time: 2012/5/3 12:34:00
+
+----------------------------------------------
+
+White Level: 3014
+Black Level: 3014
+Winner: Black
+Total Turns: 42
+Time: 2012/5/3 12:36:00
+
+----------------------------------------------
+
+White Level: 3015
+Black Level: 3015
+Winner: Black
+Total Turns: 54
+Time: 2012/5/3 12:38:30
+
+----------------------------------------------
+
+White Level: 3016
+Black Level: 3016
+Winner: White
+Total Turns: 37
+Time: 2012/5/3 12:40:21
+
+----------------------------------------------
+
+White Level: 3017
+Black Level: 3017
+Winner: White
+Total Turns: 29
+Time: 2012/5/3 12:41:37
+
+----------------------------------------------
+
+White Level: 3018
+Black Level: 3018
+Winner: Black
+Total Turns: 38
+Time: 2012/5/3 12:43:46
+
+----------------------------------------------
+
+White Level: 3019
+Black Level: 3019
+Winner: White
+Total Turns: 43
+Time: 2012/5/3 12:45:42
+
+----------------------------------------------
+
+White Level: 3020
+Black Level: 3020
+Winner: Black
+Total Turns: 24
+Time: 2012/5/3 12:46:50
+
+----------------------------------------------
+
+White Level: 3021
+Black Level: 3021
+Winner: White
+Total Turns: 55
+Time: 2012/5/3 12:49:41
+
+----------------------------------------------
+
+White Level: 3022
+Black Level: 3022
+Winner: Black
+Total Turns: 94
+Time: 2012/5/3 12:54:21
+
+----------------------------------------------
+
+White Level: 3023
+Black Level: 3023
+Winner: White
+Total Turns: 41
+Time: 2012/5/3 12:56:21
+
+----------------------------------------------
+
+White Level: 3024
+Black Level: 3024
+Winner: Black
+Total Turns: 76
+Time: 2012/5/3 13:00:07
+
+----------------------------------------------
+
+White Level: 3025
+Black Level: 3025
+Winner: Black
+Total Turns: 32
+Time: 2012/5/3 13:01:51
+
+----------------------------------------------
+
+White Level: 3026
+Black Level: 3026
+Winner: Black
+Total Turns: 24
+Time: 2012/5/3 13:03:03
+
+----------------------------------------------
+
+White Level: 3027
+Black Level: 3027
+Winner: White
+Total Turns: 47
+Time: 2012/5/3 13:05:09
+
+----------------------------------------------
+
+White Level: 3028
+Black Level: 3028
+Winner: Black
+Total Turns: 16
+Time: 2012/5/3 13:06:04
+
+----------------------------------------------
+
+White Level: 3029
+Black Level: 3029
+Winner: Black
+Total Turns: 44
+Time: 2012/5/3 13:08:07
+
+----------------------------------------------
+
+White Level: 3030
+Black Level: 3030
+Winner: Black
+Total Turns: 18
+Time: 2012/5/3 13:09:04
+
+----------------------------------------------
+
+White Level: 3031
+Black Level: 3031
+Winner: White
+Total Turns: 35
+Time: 2012/5/3 13:10:52
+
+----------------------------------------------
+
+White Level: 3032
+Black Level: 3032
+Winner: Black
+Total Turns: 32
+Time: 2012/5/3 13:12:30
+
+----------------------------------------------
+
+White Level: 3033
+Black Level: 3033
+Winner: White
+Total Turns: 55
+Time: 2012/5/3 13:15:01
+
+----------------------------------------------
+
+White Level: 3034
+Black Level: 3034
+Winner: Black
+Total Turns: 36
+Time: 2012/5/3 13:16:47
+
+----------------------------------------------
+
+White Level: 3035
+Black Level: 3035
+Winner: White
+Total Turns: 45
+Time: 2012/5/3 13:18:48
+
+----------------------------------------------
+
+White Level: 3036
+Black Level: 3036
+Winner: White
+Total Turns: 25
+Time: 2012/5/3 13:20:00
+
+----------------------------------------------
+
+White Level: 3037
+Black Level: 3037
+Winner: Black
+Total Turns: 34
+Time: 2012/5/3 13:21:48
+
+----------------------------------------------
+
+White Level: 3038
+Black Level: 3038
+Winner: White
+Total Turns: 37
+Time: 2012/5/3 13:23:39
+
+----------------------------------------------
+
+White Level: 3039
+Black Level: 3039
+Winner: White
+Total Turns: 21
+Time: 2012/5/3 13:24:39
+
+----------------------------------------------
+
+White Level: 3040
+Black Level: 3040
+Winner: White
+Total Turns: 53
+Time: 2012/5/3 13:27:09
+
+----------------------------------------------
+
+White Level: 3041
+Black Level: 3041
+Winner: White
+Total Turns: 63
+Time: 2012/5/3 13:30:05
+
+----------------------------------------------
+
+White Level: 3042
+Black Level: 3042
+Winner: Black
+Total Turns: 94
+Time: 2012/5/3 13:34:38
+
+----------------------------------------------
+
+White Level: 3043
+Black Level: 3043
+Winner: White
+Total Turns: 33
+Time: 2012/5/3 13:36:14
+
+----------------------------------------------
+
+White Level: 3044
+Black Level: 3044
+Winner: Black
+Total Turns: 54
+Time: 2012/5/3 13:38:38
+
+----------------------------------------------
+
+White Level: 3045
+Black Level: 3045
+Winner: White
+Total Turns: 45
+Time: 2012/5/3 13:40:48
+
+----------------------------------------------
+
+White Level: 3046
+Black Level: 3046
+Winner: White
+Total Turns: 29
+Time: 2012/5/3 13:42:13
+
+----------------------------------------------
+
+White Level: 3047
+Black Level: 3047
+Winner: White
+Total Turns: 19
+Time: 2012/5/3 13:43:07
+
+----------------------------------------------
+
+White Level: 3048
+Black Level: 3048
+Winner: White
+Total Turns: 23
+Time: 2012/5/3 13:44:15
+
+----------------------------------------------
+
+White Level: 3049
+Black Level: 3049
+Winner: White
+Total Turns: 53
+Time: 2012/5/3 13:46:38
+
+----------------------------------------------
+
+White Level: 3050
+Black Level: 3050
+Winner: White
+Total Turns: 25
+Time: 2012/5/3 13:47:50
+
+----------------------------------------------
+
+White Level: 3051
+Black Level: 3051
+Winner: Black
+Total Turns: 28
+Time: 2012/5/3 13:49:16
+
+----------------------------------------------
+
+White Level: 3052
+Black Level: 3052
+Winner: White
+Total Turns: 43
+Time: 2012/5/3 13:51:22
+
+----------------------------------------------
+
+White Level: 3053
+Black Level: 3053
+Winner: White
+Total Turns: 47
+Time: 2012/5/3 13:53:29
+
+----------------------------------------------
+

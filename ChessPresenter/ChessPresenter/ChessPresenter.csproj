@@ -130,6 +130,20 @@
       <Name>ChessLaw</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="picture\black_bishop.png" />
+    <Resource Include="picture\black_king.png" />
+    <Resource Include="picture\black_knight.png" />
+    <Resource Include="picture\black_pawn.png" />
+    <Resource Include="picture\black_queen.png" />
+    <Resource Include="picture\black_rook.png" />
+    <Resource Include="picture\white_bishop.png" />
+    <Resource Include="picture\white_king.png" />
+    <Resource Include="picture\white_knignt.png" />
+    <Resource Include="picture\white_pawn.png" />
+    <Resource Include="picture\white_queen.png" />
+    <Resource Include="picture\white_rook.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,409 @@
+The white AI "WhiteAITD(0) start compete with the black AI "QlearningBlack!
+
+The pracise is running and you cannot operate the application.
+Please wait for the end of the practise.
+Log file name: WhiteAITD(0)_vs._QlearningBlack_2012_5_3_15_6_15.txt
+Time: 2012/5/3 15:06:15
+
+----------------------------------------------
+
+White Level: 1
+Black Level: 1002
+Winner: White
+Total Turns: 33
+Time: 2012/5/3 15:07:59
+
+----------------------------------------------
+
+White Level: 2
+Black Level: 1003
+Winner: Black
+Total Turns: 26
+Time: 2012/5/3 15:09:11
+
+----------------------------------------------
+
+White Level: 3
+Black Level: 1004
+Winner: White
+Total Turns: 29
+Time: 2012/5/3 15:10:22
+
+----------------------------------------------
+
+White Level: 4
+Black Level: 1005
+Winner: White
+Total Turns: 27
+Time: 2012/5/3 15:11:26
+
+----------------------------------------------
+
+White Level: 5
+Black Level: 1006
+Winner: White
+Total Turns: 23
+Time: 2012/5/3 15:12:21
+
+----------------------------------------------
+
+White Level: 6
+Black Level: 1007
+Winner: White
+Total Turns: 17
+Time: 2012/5/3 15:13:03
+
+----------------------------------------------
+
+White Level: 7
+Black Level: 1008
+Winner: White
+Total Turns: 33
+Time: 2012/5/3 15:14:34
+
+----------------------------------------------
+
+White Level: 8
+Black Level: 1009
+Winner: White
+Total Turns: 43
+Time: 2012/5/3 15:16:13
+
+----------------------------------------------
+
+White Level: 9
+Black Level: 1010
+Winner: White
+Total Turns: 15
+Time: 2012/5/3 15:16:47
+
+----------------------------------------------
+
+White Level: 10
+Black Level: 1011
+Winner: White
+Total Turns: 37
+Time: 2012/5/3 15:18:19
+
+----------------------------------------------
+
+White Level: 11
+Black Level: 1012
+Winner: Black
+Total Turns: 20
+Time: 2012/5/3 15:19:11
+
+----------------------------------------------
+
+White Level: 12
+Black Level: 1013
+Winner: Black
+Total Turns: 60
+Time: 2012/5/3 15:21:41
+
+----------------------------------------------
+
+White Level: 13
+Black Level: 1014
+Winner: White
+Total Turns: 53
+Time: 2012/5/3 15:24:10
+
+----------------------------------------------
+
+White Level: 14
+Black Level: 1015
+Winner: White
+Total Turns: 77
+Time: 2012/5/3 15:27:05
+
+----------------------------------------------
+
+White Level: 15
+Black Level: 1016
+Winner: Black
+Total Turns: 26
+Time: 2012/5/3 15:28:19
+
+----------------------------------------------
+
+White Level: 16
+Black Level: 1017
+Winner: Black
+Total Turns: 22
+Time: 2012/5/3 15:29:25
+
+----------------------------------------------
+
+White Level: 17
+Black Level: 1018
+Winner: Black
+Total Turns: 24
+Time: 2012/5/3 15:30:27
+
+----------------------------------------------
+
+White Level: 18
+Black Level: 1019
+Winner: White
+Total Turns: 21
+Time: 2012/5/3 15:31:24
+
+----------------------------------------------
+
+White Level: 19
+Black Level: 1020
+Winner: White
+Total Turns: 39
+Time: 2012/5/3 15:33:05
+
+----------------------------------------------
+
+White Level: 20
+Black Level: 1021
+Winner: White
+Total Turns: 23
+Time: 2012/5/3 15:33:58
+
+----------------------------------------------
+
+White Level: 21
+Black Level: 1022
+Winner: White
+Total Turns: 25
+Time: 2012/5/3 15:35:02
+
+----------------------------------------------
+
+White Level: 22
+Black Level: 1023
+Winner: Black
+Total Turns: 70
+Time: 2012/5/3 15:38:03
+
+----------------------------------------------
+
+White Level: 23
+Black Level: 1024
+Winner: White
+Total Turns: 51
+Time: 2012/5/3 15:40:10
+
+----------------------------------------------
+
+White Level: 24
+Black Level: 1025
+Winner: White
+Total Turns: 23
+Time: 2012/5/3 15:41:21
+
+----------------------------------------------
+
+White Level: 25
+Black Level: 1026
+Winner: Black
+Total Turns: 56
+Time: 2012/5/3 15:43:41
+
+----------------------------------------------
+
+White Level: 26
+Black Level: 1027
+Winner: Black
+Total Turns: 36
+Time: 2012/5/3 15:45:14
+
+----------------------------------------------
+
+White Level: 27
+Black Level: 1028
+Winner: White
+Total Turns: 73
+Time: 2012/5/3 15:48:49
+
+----------------------------------------------
+
+White Level: 28
+Black Level: 1029
+Winner: Black
+Total Turns: 60
+Time: 2012/5/3 15:51:24
+
+----------------------------------------------
+
+White Level: 29
+Black Level: 1030
+Winner: White
+Total Turns: 23
+Time: 2012/5/3 15:52:30
+
+----------------------------------------------
+
+White Level: 30
+Black Level: 1031
+Winner: Black
+Total Turns: 46
+Time: 2012/5/3 15:54:30
+
+----------------------------------------------
+
+White Level: 31
+Black Level: 1032
+Winner: Black
+Total Turns: 22
+Time: 2012/5/3 15:55:39
+
+----------------------------------------------
+
+White Level: 32
+Black Level: 1033
+Winner: Black
+Total Turns: 50
+Time: 2012/5/3 15:57:46
+
+----------------------------------------------
+
+White Level: 33
+Black Level: 1034
+Winner: White
+Total Turns: 25
+Time: 2012/5/3 15:58:47
+
+----------------------------------------------
+
+White Level: 34
+Black Level: 1035
+Winner: White
+Total Turns: 17
+Time: 2012/5/3 15:59:29
+
+----------------------------------------------
+
+White Level: 35
+Black Level: 1036
+Winner: White
+Total Turns: 27
+Time: 2012/5/3 16:00:39
+
+----------------------------------------------
+
+White Level: 36
+Black Level: 1037
+Winner: White
+Total Turns: 17
+Time: 2012/5/3 16:01:26
+
+----------------------------------------------
+
+White Level: 37
+Black Level: 1038
+Winner: White
+Total Turns: 39
+Time: 2012/5/3 16:03:05
+
+----------------------------------------------
+
+White Level: 38
+Black Level: 1039
+Winner: Black
+Total Turns: 50
+Time: 2012/5/3 16:05:09
+
+----------------------------------------------
+
+White Level: 39
+Black Level: 1040
+Winner: Black
+Total Turns: 40
+Time: 2012/5/3 16:06:59
+
+----------------------------------------------
+
+White Level: 40
+Black Level: 1041
+Winner: White
+Total Turns: 55
+Time: 2012/5/3 16:09:41
+
+----------------------------------------------
+
+White Level: 41
+Black Level: 1042
+Winner: Black
+Total Turns: 30
+Time: 2012/5/3 16:11:06
+
+----------------------------------------------
+
+White Level: 42
+Black Level: 1043
+Winner: White
+Total Turns: 39
+Time: 2012/5/3 16:12:56
+
+----------------------------------------------
+
+White Level: 43
+Black Level: 1044
+Winner: White
+Total Turns: 41
+Time: 2012/5/3 16:14:47
+
+----------------------------------------------
+
+White Level: 44
+Black Level: 1045
+Winner: White
+Total Turns: 55
+Time: 2012/5/3 16:17:07
+
+----------------------------------------------
+
+White Level: 45
+Black Level: 1046
+Winner: White
+Total Turns: 29
+Time: 2012/5/3 16:18:17
+
+----------------------------------------------
+
+White Level: 46
+Black Level: 1047
+Winner: Black
+Total Turns: 42
+Time: 2012/5/3 16:20:05
+
+----------------------------------------------
+
+White Level: 47
+Black Level: 1048
+Winner: White
+Total Turns: 25
+Time: 2012/5/3 16:21:13
+
+----------------------------------------------
+
+White Level: 48
+Black Level: 1049
+Winner: White
+Total Turns: 41
+Time: 2012/5/3 16:23:03
+
+----------------------------------------------
+
+White Level: 49
+Black Level: 1050
+Winner: Black
+Total Turns: 58
+Time: 2012/5/3 16:25:50
+
+----------------------------------------------
+
+White Level: 50
+Black Level: 1051
+Winner: White
+Total Turns: 29
+Time: 2012/5/3 16:26:56
+
+----------------------------------------------
+

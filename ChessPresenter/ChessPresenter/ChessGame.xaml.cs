@@ -78,6 +78,7 @@ namespace ChessPresenter
 
         void GameLoaded(object sender, RoutedEventArgs e)
         {
+            RenderChessBoard();
             ChangeTurn();
         }
 
@@ -106,7 +107,6 @@ namespace ChessPresenter
             chessState.State[7][2] = chessState.State[7][5] = ChessType.BBishop;
             chessState.State[7][3] = ChessType.BQueen; chessState.State[7][4] = ChessType.BKing;
             for (int i = 0; i < 8; ++i) chessState.State[6][i] = ChessType.BPawn;
-            RenderChessBoard();
         }
 
         void RenderChessBoard()
@@ -117,27 +117,41 @@ namespace ChessPresenter
                     switch (chessState.State[i][j])
                     {
                         case ChessType.BBishop:
+                            SetButtonImage("picture/black_bishop.png", buttons[i][j]); break;
                         case ChessType.WBishop:
-                            buttons[i][j].Content = "Bishop"; break;
+                            SetButtonImage("picture/white_bishop.png", buttons[i][j]); break;
                         case ChessType.BPawn:
+                            SetButtonImage("picture/black_pawn.png", buttons[i][j]); break;
                         case ChessType.WPawn:
-                            buttons[i][j].Content = "Pawn"; break;
+                            SetButtonImage("picture/white_pawn.png", buttons[i][j]); break;
                         case ChessType.BRook:
+                            SetButtonImage("picture/black_rook.png", buttons[i][j]); break;
                         case ChessType.WRook:
-                            buttons[i][j].Content = "Rook"; break;
+                            SetButtonImage("picture/white_rook.png", buttons[i][j]); break;
                         case ChessType.BKnight:
+                            SetButtonImage("picture/black_knight.png", buttons[i][j]); break;
                         case ChessType.WKnight:
-                            buttons[i][j].Content = "Knight"; break;
+                            SetButtonImage("picture/white_knignt.png", buttons[i][j]); break;
                         case ChessType.BQueen:
+                            SetButtonImage("picture/black_queen.png", buttons[i][j]); break;
                         case ChessType.WQueen:
-                            buttons[i][j].Content = "Queen"; break;
+                            SetButtonImage("picture/white_queen.png", buttons[i][j]); break;
                         case ChessType.BKing:
+                            SetButtonImage("picture/black_king.png", buttons[i][j]); break;
                         case ChessType.WKing:
-                            buttons[i][j].Content = "King"; break;
+                            SetButtonImage("picture/white_king.png", buttons[i][j]); break;
                         default: buttons[i][j].Content = ""; break;
                     } if (chessState.IsWhiteChess(i, j)) buttons[i][j].Foreground = new SolidColorBrush(Colors.Aqua);
                     else buttons[i][j].Foreground = new SolidColorBrush(Colors.Black);
                 }
+        }
+
+        void SetButtonImage(string add, Button btn)
+        {
+            Uri uri = new Uri(add, UriKind.Relative);
+            Image image = new Image();
+            image.Source = new BitmapImage(uri);
+            btn.Content = image;
         }
 
         void ChangeTurn()

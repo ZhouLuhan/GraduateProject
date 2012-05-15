@@ -4,13 +4,13 @@
     <ServerName>WhiteAITD(0)</ServerName>
     <URL>http://localhost:8010/ChessAITD0V1_0/</URL>
     <Type>White</Type>
-    <Level>3003</Level>
+    <Level>50</Level>
   </EndPoint>
   <EndPoint>
     <ServerName>BlackAITD0</ServerName>
     <URL>http://localhost:8010/BlackAITD0_V1_0/</URL>
     <Type>Black</Type>
-    <Level>3003</Level>
+    <Level>3053</Level>
   </EndPoint>
   <EndPoint>
     <ServerName>WhiteAIQlearning</ServerName>
@@ -22,6 +22,6 @@
     <ServerName>QlearningBlack</ServerName>
     <URL>http://localhost:8010/QlearningBlack/</URL>
     <Type>Black</Type>
-    <Level>1001</Level>
+    <Level>1051</Level>
   </EndPoint>
 </Root>
