@@ -1,0 +1,13 @@
+D:\GraduateProject\WPF_Picture\WPF_Picture\bin\Debug\WPF_Picture.exe
+D:\GraduateProject\WPF_Picture\WPF_Picture\bin\Debug\WPF_Picture.pdb
+D:\GraduateProject\WPF_Picture\WPF_Picture\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\GraduateProject\WPF_Picture\WPF_Picture\obj\x86\Debug\MainWindow.baml
+D:\GraduateProject\WPF_Picture\WPF_Picture\obj\x86\Debug\MainWindow.g.cs
+D:\GraduateProject\WPF_Picture\WPF_Picture\obj\x86\Debug\App.g.cs
+D:\GraduateProject\WPF_Picture\WPF_Picture\obj\x86\Debug\WPF_Picture_MarkupCompile.cache
+D:\GraduateProject\WPF_Picture\WPF_Picture\obj\x86\Debug\WPF_Picture.g.resources
+D:\GraduateProject\WPF_Picture\WPF_Picture\obj\x86\Debug\WPF_Picture.Properties.Resources.resources
+D:\GraduateProject\WPF_Picture\WPF_Picture\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\GraduateProject\WPF_Picture\WPF_Picture\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\GraduateProject\WPF_Picture\WPF_Picture\obj\x86\Debug\WPF_Picture.exe
+D:\GraduateProject\WPF_Picture\WPF_Picture\obj\x86\Debug\WPF_Picture.pdb
